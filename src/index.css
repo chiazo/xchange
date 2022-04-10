@@ -1,0 +1,149 @@
+/* feel free to go on google fonts and change this to another font! */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap");
+
+/* == HTML == */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  box-sizing: border-box;
+  --bg-color: rgb(255, 255, 255);
+  --text-color: rgb(0, 0, 0);
+  --title-color: rgb(126, 11, 59);
+  --header-color: rgb(185, 85, 85);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+html {
+  box-sizing: border-box;
+  /* if you change the font, don't forget to change it here too! */
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+div {
+  margin-bottom: 1rem;
+}
+
+.masthead {
+  margin-bottom: 2rem;
+}
+
+/* body */
+
+body {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+/* == HEADERS == */
+h1 {
+  color: var(--title-color);
+}
+
+h2,
+h3 {
+  color: var(--header-color);
+}
+
+h4 {
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  margin-top: 2rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+h4 {
+  padding: 20px;
+}
+
+.background {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/**/
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin: 0 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+}
+
+.container::before,
+.container::after,
+.wrapper::before,
+.wrapper::after {
+  display: table;
+  content: "";
+  clear: both;
+  width: 100%;
+}
+
+.main {
+  margin: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  height: 2.5rem;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.form-group>.form-control {
+  border: 3px solid var(--title-color);
+  box-shadow: 3px 4px grey;
+}
+
+.container .btn-primary {
+  background-color: var(--title-color);
+  border-color: var(--header-color);
+}
+
+.btn-primary.save-btn {
+  background-color: var(--header-color);
+  border-color: var(--header-color);
+}
+
+.container .btn-primary:hover,
+.container .btn-primary:focus {
+  background-color: var(--title-color);
+  border-color: var(--header-color);
+}
+
+.btn-primary.save-btn:hover,
+.btn-primary.save-btn:focus {
+  background-color: var(--header-color);
+  border-color: var(--header-color);
+}
