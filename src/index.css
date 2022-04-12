@@ -1,5 +1,5 @@
 /* feel free to go on google fonts and change this to another font! */
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap');
 
 /* == HTML == */
 *,
@@ -9,26 +9,25 @@
   box-sizing: border-box;
   --bg-color: rgb(255, 255, 255);
   --text-color: rgb(0, 0, 0);
-  --title-color: rgb(126, 11, 59);
-  --header-color: rgb(185, 85, 85);
+  --title-color: #444444;
+  --header-color: rgba(173, 211, 255, 0.6);
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: 'Jost', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
   box-sizing: border-box;
-  /* if you change the font, don't forget to change it here too! */
-  font-family: "Source Sans Pro", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  max-width: 390px;
+  width: 100%;
+  max-height: 844px;
+  height: 100%;
   line-height: 1.4;
   scroll-behavior: smooth;
   box-sizing: border-box;
   font-size: 18px;
-}
-
-div {
-  margin-bottom: 1rem;
 }
 
 .masthead {
@@ -40,11 +39,18 @@ div {
 body {
   box-sizing: border-box;
   min-height: 100%;
+  border: 1px solid black;
 }
 
 /* == HEADERS == */
 h1 {
   color: var(--title-color);
+}
+
+.site-title {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 h2,
@@ -105,20 +111,30 @@ h4 {
 }
 
 .main {
-  margin: 2rem;
+  margin: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
 .footer {
-  clear: both;
-  position: relative;
-  height: 200px;
-  height: 2.5rem;
-  margin-top: 2rem;
-  padding: 0.5rem 1rem;
-  text-align: center;
+  position: fixed;
+  bottom: 14px;
+  font-size: 12px;
+}
+
+.footer button {
+  border: 0px;
+}
+
+.nav-button:hover {
+  border-bottom: 3px solid var(--header-color);
+  ;
+}
+
+.nav-button-icon {
+  margin: 0rem 1.2rem 0 1.2rem;
+  height: 53px;
 }
 
 .form-group>.form-control {
