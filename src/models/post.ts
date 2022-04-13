@@ -22,7 +22,9 @@ export class Post {
     submission: string,
     status: Status,
     author: string,
-    icon: string
+    icon: string,
+    upvotes: number = 0,
+    downvotes: number = 0
   ) {
     this.id = id;
     this.type = type;
@@ -33,8 +35,8 @@ export class Post {
     this.author = author;
     this.icon = icon;
     this.date = new Date();
-    this.upvotes = 0;
-    this.downvotes = 0;
+    this.upvotes = upvotes;
+    this.downvotes = downvotes;
     this.comments = [];
   }
 
