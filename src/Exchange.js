@@ -1,5 +1,4 @@
 import React from "react";
-import items from "../src/data/items.js"
 
 const Exchange = () => {
   return (
@@ -18,11 +17,6 @@ const Exchange = () => {
         <h5>Top Picks for William</h5>
         <div class ="grid">
           <div class = 'd-flex justify-content-around'>
-            <script>
-              {items.map((i, indx) => {
-              <button class='btn-item' id='item'>{i.name}</button>
-              })}
-            </script>
             <button class='btn-item' id='item'>Item1</button>
             <button class='btn-item' id='item'>Item2</button>
             <button class='btn-item' id='item'>Item3</button>
