@@ -163,3 +163,57 @@ h4 {
   background-color: var(--header-color);
   border-color: var(--header-color);
 }
+
+.grid {
+  padding-bottom: 8px;
+}
+.grid button{
+  background-color: rgb(230, 236, 236);
+  width: 100px;
+  height: 100px;
+}
+
+.xpoints-filter-sort {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  
+}
+.xpoints-filter-sort button{
+  background-color: #E6E6E6;
+  border-radius: 12px;
+}
+
+.xpoints-filter-sort button:hover {
+  background-color: #AFD4FF;
+}
+
+.btn.btn-xpoints {
+  margin-left: 15px;
+}
+.btn.btn-filter {
+  margin-left: 80px;
+}
+.btn.btn-sort {
+  margin-left: 15px;
+}
+
+h5 {
+  text-align: left;
+  margin-left: -10px;
+  padding-bottom: 13px;
+  padding-top: 15px;
+}
+
+.space {
+  width: 4px;
+  height: auto;
+  display: inline-block;
+  padding-bottom: 13px;
+}
+
+#examplesearch {
+  border-radius: 100px;
+}
+
+
+
