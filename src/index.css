@@ -85,6 +85,84 @@ h4 {
   margin-bottom: 2rem;
 }
 
+/* Post Preview */
+
+.preview.card .col-9,
+.preview-body.card-body>.row,
+.preview-body.card-body .col-4 {
+  background-color: rgb(221, 234, 249);
+}
+
+.preview.card {
+  width: 346px;
+  height: 100%;
+  min-height: 103px;
+  border: 1px solid #444444;
+  background-color: rgb(221, 234, 249);
+  box-shadow: 3px 4px 4px #4444447b;
+  margin: 8px 0;
+  border-radius: 6px;
+}
+
+.preview-body,
+.preview.card .col-3 {
+  background-color: rgb(221, 234, 249);
+
+}
+
+.preview-title.card-title {
+  background-color: rgb(221, 234, 249);
+  font-size: 15px;
+  text-align: left;
+}
+
+.preview-body.card-body {
+  padding: 10px 2px;
+}
+
+.preview-category.card-subtitle.h6 {
+  font-size: 8px;
+  margin-bottom: 8px;
+  background-color: rgb(221, 234, 249);
+
+}
+
+.preview-text {
+  font-size: 8px;
+  text-align: left;
+  background-color: rgb(221, 234, 249);
+}
+
+.preview-voting {
+  height: 80px;
+  width: 63px;
+  padding: 0 10px;
+  margin: 10px 1px;
+  font-size: 12px;
+  background-color: rgb(187, 6, 6);
+  border: 3px solid #444444;
+  border-radius: 6px;
+}
+
+.preview-voting button {
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+
+.preview-upvote button {
+  background-color: rgb(173, 217, 158, .6);
+
+}
+
+.preview-downvote button {
+  background-color: rgb(215, 162, 162, .6);
+}
+
+.preview-upvote {}
+
+.preview-downvote {}
+
 /**/
 
 .wrapper {

@@ -1,4 +1,4 @@
-import { Category, Status, Type } from "../models/post.ts";
+import { Category, Status, Type, Post } from "../models/post.ts";
 
 export const posts = [
   {
@@ -12,6 +12,8 @@ export const posts = [
     icon: "img",
     upvotes: 500,
     downvotes: 40,
+    upvoted: false,
+    downvoted: false,
   },
   {
     type: Type.Discussion,
@@ -24,6 +26,8 @@ export const posts = [
     icon: "img",
     upvotes: 470,
     downvotes: 70,
+    upvoted: false,
+    downvoted: false,
   },
   {
     type: Type.Discussion,
@@ -36,6 +40,8 @@ export const posts = [
     icon: "img",
     upvotes: 404,
     downvotes: 32,
+    upvoted: false,
+    downvoted: false,
   },
   {
     type: Type.Discussion,
@@ -48,6 +54,8 @@ export const posts = [
     icon: "img",
     upvotes: 323,
     downvotes: 23,
+    upvoted: false,
+    downvoted: false,
   },
   {
     type: Type.Question,
@@ -60,5 +68,38 @@ export const posts = [
     icon: "img",
     upvotes: 200,
     downvotes: 2,
+    upvoted: false,
+    downvoted: false,
   },
 ];
+
+export const postObjs = posts.map(
+  (
+    {
+      type,
+      title,
+      category,
+      submission,
+      status,
+      author,
+      icon,
+      upvotes,
+      downvotes,
+      upvoted,
+      downvoted,
+    },
+    idx
+  ) =>
+    new Post(
+      idx,
+      type,
+      category,
+      title,
+      submission,
+      status,
+      author,
+      icon,
+      upvotes,
+      downvotes
+    )
+);
