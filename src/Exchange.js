@@ -1,4 +1,5 @@
 import React from "react";
+import items from "../src/data/items.js"
 
 const Exchange = () => {
   return (
