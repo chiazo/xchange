@@ -5,7 +5,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Header, Footer } from "./components";
 import Home from "./Home";
 import Discussion from "./Discussion";
+import DiscussionPost from "./DiscussionPost";
 import Exchange from "./Exchange";
+import Profile from "./Profile";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,11 +21,17 @@ const Index = () => (
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/discuss">
+          <Route path="/discussions">
             <Discussion />
+          </Route>
+          <Route path="/post/:id">
+            <DiscussionPost />
           </Route>
           <Route path="/exchange">
             <Exchange />
+          </Route>
+          <Route path="/profile-page">
+            <Profile />
           </Route>
         </Switch>
       </div>

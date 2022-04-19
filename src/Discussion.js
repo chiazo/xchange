@@ -7,7 +7,6 @@ const Discussion = () => {
 
   const updateCurrPost = (id) => {
     setCurrPostId(id);
-    console.log("curr post id: ", id);
   };
 
   const updateVotes = (id, type, val) => {
@@ -67,55 +66,60 @@ const Discussion = () => {
   return (
     <div className="home">
       <div id="content">
-        <div className="container">
-          <div className="row align-items-end text-center">
-            <div className="nav-button col">
-              <button>XPoints - 100</button>
-            </div>
-            <div className="nav-button col">
-              <button>Filter</button>
-            </div>
-            <div className="nav-button col">
-              <button>Sort</button>
-            </div>
+        <div className="row">
+          <div className="col-7" style={{ textAlign: "left" }}>
+            <button
+              className="discussion-button xpoints"
+            >
+              XPoints - 100
+            </button>
           </div>
-          <div className="row justify-content-md-center">
-            {posts.map(
-              (
-                {
-                  author,
-                  category,
-                  submission,
-                  title,
-                  status,
-                  upvotes,
-                  downvotes,
-                  icon,
-                  upvoted,
-                  downvoted,
-                },
-                idx
-              ) => (
-                <PostPreview
-                  key={idx}
-                  id={idx}
-                  author={author}
-                  currPostId={currPostId}
-                  updateVotes={updateVotes}
-                  updateCurrPost={updateCurrPost}
-                  category={category}
-                  submission={submission}
-                  title={title}
-                  status={status}
-                  upvotes={upvotes}
-                  downvotes={downvotes}
-                  icon={icon}
-                  changeVoteStatus={changeVoteStatus}
-                />
-              )
-            )}
+          <div className="col-5">
+            <div className="row">
+              <div className="col-5">
+                <button className="discussion-button">Filter</button>
+              </div>
+              <div className="col-5">
+                <button className="discussion-button">Sort</button>
+              </div>
+            </div>
           </div>
         </div>
+
+        {posts.map(
+          (
+            {
+              author,
+              category,
+              submission,
+              title,
+              status,
+              upvotes,
+              downvotes,
+              icon,
+              upvoted,
+              downvoted,
+            },
+            idx
+          ) => (
+            <PostPreview
+              key={idx}
+              id={idx}
+              author={author}
+              currPostId={currPostId}
+              updateVotes={updateVotes}
+              updateCurrPost={updateCurrPost}
+              category={category}
+              submission={submission}
+              title={title}
+              status={status}
+              upvotes={upvotes}
+              downvotes={downvotes}
+              icon={icon}
+              changeVoteStatus={changeVoteStatus}
+            />
+          )
+        )}
       </div>
     </div>
   );
