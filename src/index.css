@@ -11,7 +11,6 @@
   --text-color: rgb(0, 0, 0);
   --title-color: #444444;
   --header-color: rgba(173, 211, 255, 0.6);
-  background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Jost', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,11 +26,20 @@ html {
   line-height: 1.4;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  background-color: var(--bg-color);
   font-size: 18px;
 }
 
 .masthead {
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
+}
+
+.masthead button {
+  background-color: var(--header-color);
+  border: 2px solid #444444;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
 
 /* body */
@@ -90,28 +98,31 @@ h4 {
 .preview.card .col-9,
 .preview-body.card-body>.row,
 .preview-body.card-body .col-4 {
-  background-color: rgb(221, 234, 249);
+  background-color: rgb(238, 246, 254);
 }
 
 .preview.card {
   width: 346px;
   height: 100%;
   min-height: 103px;
-  border: 1px solid #444444;
-  background-color: rgb(221, 234, 249);
+  background-color: rgb(238, 246, 254);
+  margin: 14px 0;
+  border: 2px solid #444444;
   box-shadow: 3px 4px 4px #4444447b;
-  margin: 8px 0;
-  border-radius: 6px;
 }
 
 .preview-body,
 .preview.card .col-3 {
-  background-color: rgb(221, 234, 249);
+  background-color: rgb(238, 246, 254);
 
 }
 
+.preview.card>.row {
+  margin: 0;
+}
+
 .preview-title.card-title {
-  background-color: rgb(221, 234, 249);
+  background-color: rgb(238, 246, 254);
   font-size: 15px;
   text-align: left;
 }
@@ -120,35 +131,48 @@ h4 {
   padding: 10px 2px;
 }
 
+.category.col-4 {
+  padding-right: 0;
+  width: 70px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: rgba(175, 212, 255, 0.5);
+}
+
 .preview-category.card-subtitle.h6 {
   font-size: 8px;
+  text-align: left;
   margin-bottom: 8px;
-  background-color: rgb(221, 234, 249);
+  background-color: rgb(238, 246, 254);
 
 }
 
 .preview-text {
   font-size: 8px;
   text-align: left;
-  background-color: rgb(221, 234, 249);
+  background-color: rgb(238, 246, 254);
+}
+
+.voting-arrow {
+  height: 16px;
 }
 
 .preview-voting {
-  height: 80px;
+  height: 90px;
   width: 63px;
-  padding: 0 10px;
   margin: 10px 1px;
-  font-size: 12px;
-  background-color: rgb(187, 6, 6);
-  border: 3px solid #444444;
+  font-size: 11px;
+  background-color: var(--bg-color);
+  border: 2px solid #444444;
   border-radius: 6px;
 }
 
 .preview-voting button {
   border-radius: 50%;
-  border: 1px solid black;
+  margin-top: 2px;
+  border: 1.4px solid black;
+  height: 25px;
 }
-
 
 .preview-upvote button {
   background-color: rgb(173, 217, 158, .6);
@@ -196,13 +220,30 @@ h4 {
 }
 
 .footer {
+  background-color: var(--bg-color);
+  padding: 5px 10px 10px 5px;
   position: fixed;
-  bottom: 14px;
+  bottom: 0px;
   font-size: 12px;
 }
 
 .footer button {
   border: 0px;
+  background-color: var(--bg-color);
+
+}
+
+.discussion-button {
+  border-radius: 10px;
+  min-width: 60px;
+  border: none;
+}
+
+.discussion-button.xpoints {
+  background-color: rgba(175, 212, 255, 0.6);
+  min-width: 124px;
+  height: 41px;
+  width: 50%;
 }
 
 .nav-button:hover {

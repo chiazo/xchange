@@ -19,7 +19,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="nav-button col">
-          <Link to="/discuss">
+          <Link to="/discussions">
             <div>
               <img
                 className="nav-button-icon"
