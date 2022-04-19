@@ -31,9 +31,9 @@ const Exchange = () => {
         <h5> Your Favorite Sellers</h5>
         <div class = "grid">
           <div class = 'd-flex justify-content-around'>
-              <button type='button' class='btn-seller'>Seller1</button>
-              <button type='button' class='btn-seller'>Seller2</button>
-              <button type='button' class='btn-seller'>Seller3</button>
+              <button type='btn' class='btn-seller'>Seller1</button>
+              <button type='btn' class='btn-seller'>Seller2</button>
+              <button type='btn' class='btn-seller'>Seller3</button>
           </div>
         </div>
       </div>
