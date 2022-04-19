@@ -283,11 +283,14 @@ h4 {
   border-color: var(--header-color);
 }
 
-.grid {
-  padding-bottom: 8px;
-}
+
 .grid button{
-  background-color: rgb(230, 236, 236);
+  width: 100px;
+  height: 100px;
+}
+.item input {
+  border: 1px solid black;
+  border-radius: 13px;
   width: 100px;
   height: 100px;
 }
@@ -324,15 +327,39 @@ h5 {
 }
 
 .space {
-  width: 4px;
+  width: 100px;
   height: auto;
   display: inline-block;
-  padding-bottom: 13px;
+  padding-bottom: 0px;
 }
 
 #examplesearch {
   border-radius: 90px;
 }
 
+.item {
+  position: relative;
+}
 
+#price {
+  position: absolute;
+  right: 0px;
+  bottom: 67px;
+  padding-right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  border-width: 50px;
+  border: 1px solid black
+}
 
+#name {
+  position:absolute;
+  bottom: 0px;
+  left: 30px;
+  background-color: white;
+  border: 1px solid black;
+}
+ p {
+   font-size: 15px;
+   font-weight: 500;
+ }
