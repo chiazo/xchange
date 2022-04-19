@@ -1,7 +1,7 @@
 import React from "react";
 import { items1, items2 } from "./data/items.js";
+import { users } from "./data/users.js";
 const Exchange = () => {
-  //console.log(items);
   return (
     <div className="home">
       <div id="content">
@@ -13,69 +13,70 @@ const Exchange = () => {
             placeholder="Search"
           ></input>
         </form>
-        <div className="xpoints-filter-sort">
+        <div className="market-xpoints-filter-sort">
           <div className="row">
-            <div className="item">
-              <button type="button" className="btn btn-xpoints">
+            <div className="col-7" style={{ textAlign: "left" }}>
+              <button className="discussion-button xpoints">
                 XPoints - 100
               </button>
-              <button type="button" className="btn btn-filter">
-                Filter
-              </button>
-              <button type="button" className="btn btn-sort">
-                Sort
-              </button>
+            </div>
+            <div className="col-5">
+              <div className="row">
+                <div className="col-5">
+                  <button className="discussion-button">Filter</button>
+                </div>
+                <div className="col-5">
+                  <button className="discussion-button">Sort</button>
+                </div>
+              </div>
             </div>
           </div>
-          <h5>Top Picks for William</h5>
-          <div className="grid">
-            <div className="d-flex justify-content-around">
-              {items1.map(({ title, price, picture }) => (
-                <div className="col-sm">
+        </div>
+        <h5 id="header2">Top Picks for William</h5>
+        <div className="grid">
+          <div className="d-flex justify-content-around">
+            {items1.map(({ title, price, picture }) => (
+              <div className="col-sm">
+                <div className="item">
+                  <input type="image" src={picture} />
+                  <p id="price">${price}</p>
+                </div>
+                <div className="d-flex justify-content-around">
+                  <p>{title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="d-flex justify-content-around">
+            {items2.map(({ title, price, picture }) => (
+              <div className="col-sm">
+                <div className="item">
                   <div className="item">
                     <input type="image" src={picture} />
                     <p id="price">${price}</p>
                   </div>
-                  <div className="d-flex justify-content-around">
-                    <p>{title}</p>
-                  </div>
                 </div>
-              ))}
-            </div>
-            <div className="d-flex justify-content-around">
-              {items2.map(({ title, price, picture }) => (
-                <div className="col-sm">
-                  <div className="item">
-                    <div className="item">
-                      <input type="image" src={picture} />
-                      <p id="price">${price}</p>
-                    </div>
-                    <p id="price">${price}</p>
-                  </div>
-                  <div className="d-flex justify-content-around">
-                    <p>{title}</p>
-                  </div>
+                <div className="d-flex justify-content-around">
+                  <p>{title}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
           <h5> Your Favorite Sellers</h5>
           <div className="grid">
             <div className="d-flex justify-content-around">
-              <button type="btn" className="btn-seller">
-                Seller1
-              </button>
-              <button type="btn" className="btn-seller">
-                Seller2
-              </button>
-              <button type="btn" className="btn-seller">
-                Seller3
-              </button>
-            </div>
-            <div className="d-flex justify-content-around">
-              <p>Seller name</p>
-              <p>Seller name</p>
-              <p>Seller name</p>
+              {users.map(({ username, profile_pic }) => (
+                <div className="col-sm">
+                  <div className="item">
+                    <div className="item">
+                      <input type="image" src={profile_pic} />
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-around">
+                    <p>{username}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { Category } from "../models/items.ts";
 export const items1 = [
   {
-    title: "UNC Sweatshirt",
+    title: "Sweatshirt",
     price: 10,
     picture:
       "https://i.etsystatic.com/31788734/r/il/901f0d/3567493314/il_1588xN.3567493314_9tfh.jpg",
@@ -12,7 +12,7 @@ export const items1 = [
     description: "description",
   },
   {
-    title: "COMP 455 Textbook",
+    title: "455 Textbook",
     price: 30,
     picture:
       "https://images-na.ssl-images-amazon.com/images/I/414EP0Tw76L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
