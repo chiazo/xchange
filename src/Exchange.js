@@ -3,7 +3,7 @@ import { items1, items2 } from "./data/items.js";
 import { users } from "./data/users.js";
 const Exchange = () => {
   return (
-    <div className="home">
+    <div className="exchange">
       <div id="content">
         <form>
           <input
@@ -38,7 +38,7 @@ const Exchange = () => {
             {items1.map(({ title, price, picture }) => (
               <div className="col-sm">
                 <div className="item">
-                  <input type="image" src={picture} />
+                  <img alt="item-pic" src={picture} />
                   <p id="price">${price}</p>
                 </div>
                 <div className="d-flex justify-content-around">
@@ -52,7 +52,7 @@ const Exchange = () => {
               <div className="col-sm">
                 <div className="item">
                   <div className="item">
-                    <input type="image" src={picture} />
+                    <img alt="item-pic" src={picture} />
                     <p id="price">${price}</p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const Exchange = () => {
                 <div className="col-sm">
                   <div className="item">
                     <div className="item">
-                      <input type="image" src={profile_pic} />
+                      <img alt="item-pic" src={profile_pic} />
                     </div>
                   </div>
                   <div className="d-flex justify-content-around">
