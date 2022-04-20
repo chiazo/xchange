@@ -331,9 +331,8 @@ h4 {
   margin: 10px 0 20px 10px;
 }
 
-.space {
-  width: 1x;
-  height: auto;
+.bottom-space {
+  height: 58px;
   display: inline-block;
   padding-bottom: 0px;
 }
@@ -349,8 +348,8 @@ h4 {
 #price {
   position: absolute;
   right: 0px;
-  bottom: 67px;
-  padding-right: 10px;
+  bottom: 58px;
+  padding-right: 5px;
   background-color: white;
   border-radius: 5px;
   border-width: 50px;
@@ -374,3 +373,42 @@ p {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.dropbtn {
+  background-color: rgb(239, 239, 239);
+  color: black;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  min-width: 60px;
+  border: none;
+  font-size: 18px;
+}
+
+.dropdown {
+  position: relative;
+  display:block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(239, 239, 239);
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-size: smaller;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration:none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:rgba(175, 212, 255, 0.6); text-decoration: none; font-weight: bold; color: black;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:  rgb(239, 239, 239); }
