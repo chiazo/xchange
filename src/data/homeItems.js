@@ -1,4 +1,4 @@
-import { Category } from "../models/items.ts";
+import { Category } from "../models/homeItems.ts";
 export const items1 = [
  {
    title: "Sweatshirt",

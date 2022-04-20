@@ -18,7 +18,9 @@
 import React, { useState } from "react";
 import { homePosts } from "./data/homePosts";
 import { PostPreview } from "./components/";
-import { Card } from "react-bootstrap";
+// import { Card } from "react-bootstrap";
+import { items1, items2 } from "./data/homeItems.js";
+
 
 const Home = () => {
   const [currPostId, setCurrPostId] = useState("");
@@ -141,8 +143,42 @@ const Home = () => {
 </div>
 
 </div>
+
+<div className="grid">
+         <div className="d-flex justify-content-around">
+           {items1.map(({ title, price, picture }) => (
+             <div className="col-sm">
+               <div className="item">
+                 <input type="image" src={picture} />
+                 <p id="price">${price}</p>
+               </div>
+               <div className="d-flex justify-content-around">
+                 <p>{title}</p>
+               </div>
+             </div>
+           ))}
+         </div>
+         <div className="d-flex justify-content-around">
+           {items2.map(({ title, price, picture }) => (
+             <div className="col-sm">
+               <div className="item">
+                 <div className="item">
+                   <input type="image" src={picture} />
+                   <p id="price">${price}</p>
+                 </div>
+               </div>
+               <div className="d-flex justify-content-around">
+                 <p>{title}</p>
+               </div>
+             </div>
+           ))}
+         </div>
+
+      </div>
       </div>
     </div>
+
+    
 
     
   );
