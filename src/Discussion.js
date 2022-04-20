@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { posts } from "./data/posts";
-import { PostPreview } from "./components/";
+import { PostPreview } from "./components/post-preview.js";
 
 const Discussion = () => {
   const [currPostId, setCurrPostId] = useState("");
