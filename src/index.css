@@ -294,6 +294,17 @@ h4 {
   border-color: var(--header-color);
 }
 
+.grid button{
+  width: 100px;
+  height: 100px;
+}
+.item input {
+  border: 1px solid black;
+  border-radius: 13px;
+  width: 100px;
+  height: 100px;
+}
+
 h5 {
   text-align: left;
   margin-left: -10px;
