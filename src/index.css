@@ -127,6 +127,18 @@ h4 {
   text-align: left;
 }
 
+.preview-title {
+  background-color: rgb(238, 246, 254);
+  font-size: 15px;
+  text-align: left;
+  font-weight: 500;
+}
+
+#welcome-msg {
+  background-color: rgb(255, 255, 255);
+  font-size: 16px;
+}
+
 .preview-body.card-body {
   padding: 10px 2px;
 }
@@ -243,7 +255,7 @@ h4 {
   background-color: rgba(175, 212, 255, 0.6);
   min-width: 124px;
   height: 41px;
-  width: 50%;
+  width: 25%;
 }
 
 .nav-button:hover {
@@ -284,17 +296,18 @@ h4 {
 }
 
 
-.grid button{
+.grid button {
   width: 100px;
   height: 100px;
 }
+
 .item input {
   border: 1px solid black;
   border-radius: 13px;
   width: 100px;
   height: 100px;
 }
- 
+
 
 h5 {
   text-align: left;
@@ -329,18 +342,19 @@ h5 {
 }
 
 #name {
-  position:absolute;
+  position: absolute;
   bottom: 0px;
   left: 30px;
   background-color: white;
   border: 1px solid black;
 }
- p {
-   font-size: 15px;
-   font-weight: 500;
- }
 
- .market-xpoints-filter-sort {
-   padding-top: 10px;
-   padding-bottom: 10px;
- }
+p {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.market-xpoints-filter-sort {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
