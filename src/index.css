@@ -407,7 +407,7 @@ p {
   display: block;
 }
 
-.dropdown-content a:hover {background-color:rgba(175, 212, 255, 0.6); text-decoration: none; font-weight: bold; color: black;}
+.dropdown-content a:hover {background-color:rgba(175, 212, 255, 0.6); text-decoration: none; color: black;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
