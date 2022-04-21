@@ -1,5 +1,5 @@
 /* feel free to go on google fonts and change this to another font! */
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap");
 
 /* == HTML == */
 *,
@@ -12,7 +12,7 @@
   --title-color: #444444;
   --header-color: rgba(173, 211, 255, 0.6);
   color: var(--text-color);
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,7 +31,7 @@ html {
 }
 
 .masthead {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .masthead button {
@@ -96,7 +96,7 @@ h4 {
 /* Post Preview */
 
 .preview.card .col-9,
-.preview-body.card-body>.row,
+.preview-body.card-body > .row,
 .preview-body.card-body .col-4 {
   background-color: rgb(238, 246, 254);
 }
@@ -114,10 +114,9 @@ h4 {
 .preview-body,
 .preview.card .col-3 {
   background-color: rgb(238, 246, 254);
-
 }
 
-.preview.card>.row {
+.preview.card > .row {
   margin: 0;
 }
 
@@ -143,8 +142,30 @@ h4 {
   font-size: 16px;
 }
 
+.discussion .preview.card:first-child {
+  margin-top: 1rem;
+}
+
+.add-post-button {
+  right: 0;
+  bottom: 15%;
+}
+
+.add-post-button {
+  position: absolute;
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+  font-size: 25px;
+  background-color: #ffff;
+  border: 2px solid #444444;
+  box-shadow: 2px 2px 6px #444444;
+  padding: 10px;
+  border-radius: 50%;
+}
+
 .preview-body.card-body {
-  padding: 10px 2px;
+  padding: 10px;
 }
 
 .category.col-4 {
@@ -167,7 +188,6 @@ h4 {
   text-align: left;
   margin-bottom: 8px;
   background-color: rgb(238, 246, 254);
-
 }
 
 .preview-text {
@@ -198,17 +218,22 @@ h4 {
 }
 
 .preview-upvote button {
-  background-color: rgb(173, 217, 158, .6);
-
+  background-color: rgb(173, 217, 158, 0.6);
 }
 
 .preview-downvote button {
-  background-color: rgb(215, 162, 162, .6);
+  background-color: rgb(215, 162, 162, 0.6);
 }
 
-.preview-upvote {}
+.preview-upvote {
+}
 
-.preview-downvote {}
+.preview-downvote {
+}
+
+.discussion {
+  position: absolute;
+}
 
 /**/
 
@@ -254,7 +279,6 @@ h4 {
 .footer button {
   border: 0px;
   background-color: var(--bg-color);
-
 }
 
 .discussion-button,
@@ -279,7 +303,6 @@ h4 {
 
 .nav-button:hover {
   border-bottom: 3px solid var(--header-color);
-  ;
 }
 
 .nav-button-icon {
@@ -287,7 +310,7 @@ h4 {
   height: 53px;
 }
 
-.form-group>.form-control {
+.form-group > .form-control {
   border: 3px solid var(--title-color);
   box-shadow: 3px 4px grey;
 }
