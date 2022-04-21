@@ -89,6 +89,8 @@ const Home = () => {
               upvotes,
               downvotes,
               icon,
+              upvoted,
+              downvoted,
             },
             idx
           ) => (
@@ -107,6 +109,8 @@ const Home = () => {
               downvotes={downvotes}
               icon={icon}
               changeVoteStatus={changeVoteStatus}
+              u={upvoted}
+              d={downvoted}
             />
           )
         )}

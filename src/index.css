@@ -151,6 +151,16 @@ h4 {
   bottom: 15%;
 }
 
+.upvoted {
+  color: green;
+  background-color: rgb(234, 255, 234);
+}
+
+.downvoted {
+  color: red;
+  background-color: rgb(255, 223, 223);
+}
+
 .add-post-button {
   position: absolute;
   z-index: 1;
