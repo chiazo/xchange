@@ -15,11 +15,7 @@ const Exchange = () => {
         </form>
         <div className="market-xpoints-filter-sort">
           <div className="row">
-            <div className="col-7" style={{ textAlign: "left" }}>
-              <button className="discussion-button xpoints">
-                XPoints - 100
-              </button>
-            </div>
+            <div className="col-7" style={{ textAlign: "left" }}></div>
             <div className="col-5">
               <div className="row">
                 <div className="col-5">

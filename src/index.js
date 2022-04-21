@@ -6,6 +6,7 @@ import { Header, Footer } from "./components";
 import Home from "./Home";
 import Discussion from "./Discussion";
 import DiscussionPost from "./DiscussionPost";
+import AddPost from "./AddPost";
 import Exchange from "./Exchange";
 import Profile from "./Profile";
 
@@ -26,6 +27,9 @@ const Index = () => (
           </Route>
           <Route path="/post/:id">
             <DiscussionPost />
+          </Route>
+          <Route path="/add-post">
+            <AddPost />
           </Route>
           <Route path="/exchange">
             <Exchange />

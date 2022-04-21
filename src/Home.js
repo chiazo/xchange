@@ -77,7 +77,6 @@ const Home = () => {
               Trending Discussion
             </div>
           </div>
-          <button className="home-button xpoints">XPoints - 100</button>
         </div>
         {homePosts.map(
           (
@@ -90,8 +89,6 @@ const Home = () => {
               upvotes,
               downvotes,
               icon,
-              upvoted,
-              downvoted,
             },
             idx
           ) => (
