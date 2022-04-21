@@ -115,6 +115,8 @@ const Discussion = () => {
               downvotes={downvotes}
               icon={icon}
               changeVoteStatus={changeVoteStatus}
+              u={upvoted}
+              d={downvoted}
             />
           )
         )}
