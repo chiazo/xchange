@@ -1,13 +1,15 @@
 {
-  "files": {
-    "main.css": "/xchange/static/css/main.e82f8e00.css",
-    "main.js": "/xchange/static/js/main.b47ede9b.js",
-    "index.html": "/xchange/index.html",
-    "main.e82f8e00.css.map": "/xchange/static/css/main.e82f8e00.css.map",
-    "main.b47ede9b.js.map": "/xchange/static/js/main.b47ede9b.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.e82f8e00.css",
-    "static/js/main.b47ede9b.js"
-  ]
+  "main.css": "/xchange/static/css/main.623c75a9.chunk.css",
+  "main.js": "/xchange/static/js/main.639b9679.chunk.js",
+  "main.js.map": "/xchange/static/js/main.639b9679.chunk.js.map",
+  "static/css/1.d450e8eb.chunk.css": "/xchange/static/css/1.d450e8eb.chunk.css",
+  "static/js/1.00213bc3.chunk.js": "/xchange/static/js/1.00213bc3.chunk.js",
+  "static/js/1.00213bc3.chunk.js.map": "/xchange/static/js/1.00213bc3.chunk.js.map",
+  "runtime~main.js": "/xchange/static/js/runtime~main.6533b053.js",
+  "runtime~main.js.map": "/xchange/static/js/runtime~main.6533b053.js.map",
+  "static/css/main.623c75a9.chunk.css.map": "/xchange/static/css/main.623c75a9.chunk.css.map",
+  "static/css/1.d450e8eb.chunk.css.map": "/xchange/static/css/1.d450e8eb.chunk.css.map",
+  "index.html": "/xchange/index.html",
+  "precache-manifest.e646ce8f8338acddbb7987409c064313.js": "/xchange/precache-manifest.e646ce8f8338acddbb7987409c064313.js",
+  "service-worker.js": "/xchange/service-worker.js"
 }
