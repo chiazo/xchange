@@ -19,10 +19,26 @@ const Exchange = () => {
             <div className="col-5">
               <div className="row">
                 <div className="col-5">
-                  <button className="discussion-button">Filter</button>
+                  <div class="dropdown">
+                    <button className="dropbtn">Filter</button>
+                    <div class="dropdown-content">
+                      <a href="#">Clothing</a>
+                      <a href="#">School</a>
+                      <a href="#">Home</a>
+                      <a href="#">Service</a>
+                    </div>
+                  </div>
                 </div>
                 <div className="col-5">
-                  <button className="discussion-button">Sort</button>
+                  <div class="dropdown">
+                    <button className="dropbtn">Sort</button>
+                    <div class="dropdown-content">
+                      <a href="#">Lowest Price</a>
+                      <a href="#">Highest Price</a>
+                      <a href="#">Most Recent</a>
+                      <a href="#">Most Popular</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -34,8 +50,10 @@ const Exchange = () => {
             {items1.map(({ title, price, picture }) => (
               <div className="col-sm">
                 <div className="item">
-                  <img alt="item-pic" src={picture} />
-                  <p id="price">${price}</p>
+                  <a href="default.asp">
+                    <img alt="item-pic" src={picture} />
+                    <p id="price">${price}</p>
+                  </a>
                 </div>
                 <div className="d-flex justify-content-around">
                   <p>{title}</p>
@@ -48,8 +66,10 @@ const Exchange = () => {
               <div className="col-sm">
                 <div className="item">
                   <div className="item">
-                    <img alt="item-pic" src={picture} />
-                    <p id="price">${price}</p>
+                    <a href="default.asp">
+                      <img alt="item-pic" src={picture} />
+                      <p id="price">${price}</p>
+                    </a>
                   </div>
                 </div>
                 <div className="d-flex justify-content-around">
@@ -75,6 +95,7 @@ const Exchange = () => {
               ))}
             </div>
           </div>
+          <div class="bottom-space"></div>
         </div>
       </div>
     </div>
