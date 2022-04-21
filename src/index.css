@@ -372,6 +372,7 @@ p {
 .market-xpoints-filter-sort {
   padding-top: 10px;
   padding-bottom: 10px;
+
 }
 
 .dropbtn {
@@ -394,10 +395,11 @@ p {
   display: none;
   position: absolute;
   background-color: rgb(239, 239, 239);
-  min-width: 120px;
+  min-width: 110px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  font-size: smaller;
+  font-size: 13px;
+  margin-left: -30px;
 }
 
 .dropdown-content a {
