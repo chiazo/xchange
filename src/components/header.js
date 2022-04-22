@@ -6,12 +6,12 @@ const Header = () => (
     <div>
       <div className="row">
         <div className="col-9">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/  " style={{ textDecoration: "none" }}>
             <h1 className="site-title">XChange</h1>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="/profile-page" style={{ textDecoration: "none" }}>
+          <Link to="/  profile-page" style={{ textDecoration: "none" }}>
             <button></button>
           </Link>
         </div>

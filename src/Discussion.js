@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { posts } from "./data/posts";
+import { homePosts, discussionPosts } from "./data/homePosts";
 import { PostPreview } from "./components/post-preview.js";
 import { Link } from "react-router-dom";
+import Preview from "./Preview";
 
 const Discussion = () => {
   const [currPostId, setCurrPostId] = useState("");
@@ -84,42 +86,10 @@ const Discussion = () => {
           </div>
         </div>
 
-        {posts.map(
-          (
-            {
-              author,
-              category,
-              submission,
-              title,
-              status,
-              upvotes,
-              downvotes,
-              icon,
-              upvoted,
-              downvoted,
-            },
-            idx
-          ) => (
-            <PostPreview
-              key={idx}
-              id={idx}
-              author={author}
-              currPostId={currPostId}
-              updateVotes={updateVotes}
-              updateCurrPost={updateCurrPost}
-              category={category}
-              submission={submission}
-              title={title}
-              status={status}
-              upvotes={upvotes}
-              downvotes={downvotes}
-              icon={icon}
-              changeVoteStatus={changeVoteStatus}
-              u={upvoted}
-              d={downvoted}
-            />
-          )
-        )}
+        <div>
+          <Preview posts={homePosts} />
+          <Preview posts={discussionPosts} />
+        </div>
       </div>
     </div>
   );

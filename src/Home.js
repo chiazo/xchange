@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { homePosts } from "./data/homePosts";
 import { PostPreview } from "./components/";
+import Preview from "./Preview";
 import { items1, items2 } from "./data/homeItems.js";
 
 const Home = () => {
@@ -78,42 +79,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {homePosts.map(
-          (
-            {
-              author,
-              category,
-              submission,
-              title,
-              status,
-              upvotes,
-              downvotes,
-              icon,
-              upvoted,
-              downvoted,
-            },
-            idx
-          ) => (
-            <PostPreview
-              key={idx}
-              id={idx}
-              author={author}
-              currPostId={currPostId}
-              updateVotes={updateVotes}
-              updateCurrPost={updateCurrPost}
-              category={category}
-              submission={submission}
-              title={title}
-              status={status}
-              upvotes={upvotes}
-              downvotes={downvotes}
-              icon={icon}
-              changeVoteStatus={changeVoteStatus}
-              u={upvoted}
-              d={downvoted}
-            />
-          )
-        )}
+        <Preview posts={homePosts} />
 
         <div className="row">
           .
