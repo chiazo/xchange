@@ -1,70 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { homePosts } from "./data/homePosts";
-import { PostPreview } from "./components/";
 import Preview from "./Preview";
 import { items1, items2 } from "./data/homeItems.js";
 
-const Home = () => {
-  const [currPostId, setCurrPostId] = useState("");
-
-  const updateCurrPost = (id) => {
-    setCurrPostId(id);
-  };
-
-  const updateVotes = (id, type, val) => {
-    const filteredPost = homePosts[id];
-    filteredPost[type] = val;
-  };
-
-  const changeVoteStatus = (id, type) => {
-    let filteredPost = homePosts[id];
-    if (type === "upvotes") {
-      if (filteredPost.upvoted) {
-        filteredPost = {
-          ...filteredPost,
-          upvoted: false,
-          upvotes: filteredPost.upvotes - 1,
-        };
-      } else {
-        filteredPost = {
-          ...filteredPost,
-          ...(filteredPost.downvoted && {
-            downvoted: false,
-            downvotes: filteredPost.downvotes - 1,
-          }),
-          upvoted: true,
-          upvotes: filteredPost.upvotes + 1,
-        };
-      }
-    } else if (type === "downvotes") {
-      if (filteredPost.downvoted) {
-        filteredPost = {
-          ...filteredPost,
-          downvoted: false,
-          downvotes: filteredPost.downvotes - 1,
-        };
-      } else {
-        filteredPost = {
-          ...filteredPost,
-          ...(filteredPost.upvoted && {
-            upvoted: false,
-            upvotes: filteredPost.upvotes - 1,
-          }),
-          downvoted: true,
-          downvotes: filteredPost.downvotes + 1,
-        };
-      }
-    }
-
-    homePosts[id] = filteredPost;
-    return {
-      upvotes: filteredPost.upvotes,
-      downvotes: filteredPost.downvotes,
-      upvoted: filteredPost.upvoted,
-      downvoted: filteredPost.downvoted,
-    };
-  };
-
+const Home = ({ posts }) => {
   return (
     <div className="home">
       <div id="content">
@@ -79,7 +18,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Preview posts={homePosts} />
+        <Preview posts={homePosts} allPosts={posts} />
 
         <div className="row">
           .
@@ -92,8 +31,8 @@ const Home = () => {
 
         <div className="grid">
           <div className="d-flex justify-content-around">
-            {items1.map(({ title, price, picture }) => (
-              <div className="col-sm">
+            {items1.map(({ title, price, picture }, idx) => (
+              <div className="col-sm" key={idx}>
                 <div className="item">
                   <img alt="item-pic" src={picture} />
                   <p id="price">${price}</p>
@@ -105,8 +44,8 @@ const Home = () => {
             ))}
           </div>
           <div className="d-flex justify-content-around">
-            {items2.map(({ title, price, picture }) => (
-              <div className="col-sm">
+            {items2.map(({ title, price, picture }, idx) => (
+              <div className="col-sm" key={idx + 10}>
                 <div className="item">
                   <div className="item">
                     <img alt="item-pic" src={picture} />

@@ -1,10 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { posts } from "./data/posts";
+import { useLocation } from "react-router-dom";
 
 const DiscussionPost = () => {
-  const { id } = useParams();
-  const { title, submission, author, upvotes, downvotes } = posts[id];
+  const {
+    state: { post },
+  } = useLocation();
+
+  const { title, submission, author, upvotes, downvotes } = post;
 
   return (
     <div className="home">
