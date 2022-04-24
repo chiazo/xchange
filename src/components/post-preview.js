@@ -12,23 +12,16 @@ export const PostPreview = ({
   submission,
   category,
   status,
-  upvotes,
-  downvotes,
   icon,
-  u,
-  d,
   changeVoteStatus,
+  allPosts,
 }) => {
-  const isCurrPost = currPostId === id;
-  const [currDownvotes, setCurrDownvotes] = useState(downvotes);
-  const [upvoted, setUpvoted] = useState(u);
-  const [downvoted, setDownvoted] = useState(d);
-  const [currUpvotes, setCurrUpvotes] = useState(upvotes);
+  const [currDownvotes, setCurrDownvotes] = useState(allPosts[id].downvotes);
+  const [upvoted, setUpvoted] = useState(allPosts[id].upvoted);
+  const [downvoted, setDownvoted] = useState(allPosts[id].downvoted);
+  const [currUpvotes, setCurrUpvotes] = useState(allPosts[id].upvotes);
 
   const increaseUpvotes = () => {
-    if (!isCurrPost) {
-      updateCurrPost(id);
-    }
     const result = changeVoteStatus(id, "upvotes");
     setCurrUpvotes(result.upvotes);
     setCurrDownvotes(result.downvotes);
@@ -37,10 +30,6 @@ export const PostPreview = ({
   };
 
   const increaseDownvotes = () => {
-    if (!isCurrPost) {
-      updateCurrPost(id);
-    }
-
     const result = changeVoteStatus(id, "downvotes");
     setCurrUpvotes(result.upvotes);
     setCurrDownvotes(result.downvotes);
@@ -53,14 +42,20 @@ export const PostPreview = ({
       <Card className="preview" key={id}>
         <div className="row">
           <div className="col-9">
-            <Link to={`/post/${id}`} style={{ textDecoration: "none" }}>
+            <Link
+              to={{
+                pathname: `/post/${id}`,
+                state: { post: allPosts[id] },
+              }}
+              style={{ textDecoration: "none" }}
+            >
               <Card.Body className="preview-body">
                 <div className="row">
                   <Card.Title className="preview-title">{title}</Card.Title>
                 </div>
                 <div className="row justify-content-start">
-                  {category.map((c) => (
-                    <div className="col-4 category">
+                  {category.map((c, idx) => (
+                    <div className="col-4 category" key={idx}>
                       <Card.Subtitle className="preview-category">
                         {c}
                       </Card.Subtitle>

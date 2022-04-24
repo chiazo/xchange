@@ -1,35 +1,8 @@
-import { Category, Status, Type, Post } from "../models/post.ts";
+import { Post } from "../models/post.ts";
+import { posts } from "./posts";
 
-export const homePosts = [
-  {
-    type: Type.Discussion,
-    title: "Why I left CS",
-    category: [Category.MainCategories.Academics, Category.Miscellaneous.Rant],
-    submission:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    status: Status.Public,
-    author: "@adamj22",
-    icon: "img",
-    upvotes: 500,
-    downvotes: 40,
-    upvoted: false,
-    downvoted: false,
-  },
-  {
-    type: Type.Discussion,
-    title: "Ranking Franklin",
-    category: [Category.Dining.Franklin],
-    submission:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    status: Status.Anon,
-    author: "@adamj22",
-    icon: "img",
-    upvotes: 470,
-    downvotes: 70,
-    upvoted: false,
-    downvoted: false,
-  },
-];
+export const homePosts = [...posts.slice(0, 2)];
+export const discussionPosts = [...posts.slice(2)];
 
 export const postObjs = homePosts.map(
   (
@@ -43,8 +16,6 @@ export const postObjs = homePosts.map(
       icon,
       upvotes,
       downvotes,
-      upvoted,
-      downvoted,
     },
     idx
   ) =>

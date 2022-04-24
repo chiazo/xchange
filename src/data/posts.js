@@ -2,6 +2,7 @@ import { Category, Status, Type, Post } from "../models/post.ts";
 
 export const posts = [
   {
+    id: 0,
     type: Type.Discussion,
     title: "Why I left CS",
     category: [Category.MainCategories.Academics, Category.Miscellaneous.Rant],
@@ -16,6 +17,7 @@ export const posts = [
     downvoted: false,
   },
   {
+    id: 1,
     type: Type.Discussion,
     title: "Ranking Franklin",
     category: [Category.Dining.Franklin],
@@ -30,6 +32,7 @@ export const posts = [
     downvoted: false,
   },
   {
+    id: 2,
     type: Type.Discussion,
     title: "Thoughts on Connect Carolina?",
     category: [Category.MainCategories.Academics],
@@ -44,6 +47,7 @@ export const posts = [
     downvoted: false,
   },
   {
+    id: 3,
     type: Type.Discussion,
     title: "Is Climbing Club Fun?",
     category: [Category.InterestGroups.PhysicalActivity],
@@ -58,6 +62,7 @@ export const posts = [
     downvoted: false,
   },
   {
+    id: 4,
     type: Type.Question,
     title: "What's happening near Rams?",
     category: [Category.MainCategories.Other],
