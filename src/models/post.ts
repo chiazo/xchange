@@ -1,5 +1,3 @@
-import { Comment } from "./comment";
-
 export enum Type {
   Discussion = "Discussion",
   Question = "Q & A",

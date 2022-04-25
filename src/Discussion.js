@@ -7,7 +7,7 @@ const Discussion = ({ posts }) => {
   return (
     <div className="discussion">
       <div id="content">
-        <Link to="/add-post">
+        <Link to="/xchange/add-post">
           <button className="add-post-button">+</button>
         </Link>
         <div className="row">
