@@ -1,6 +1,10 @@
 import React from "react";
 
-const AddPost = () => {
+
+export const AddPost = () => {
+  const submitPost =() => {
+    
+  };
   return (
     <div className="home">
       <div id="content">
@@ -20,6 +24,19 @@ const AddPost = () => {
       </div>
     </div>
   </fieldset>
+  <div class="form-group row">
+  <legend class="col-form-label col-sm-2 pt-0">Category</legend>
+    <div class="col-sm-10">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></input>
+        <label class="form-check-label" for="inlineCheckbox1">Academics</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"></input>
+        <label class="form-check-label" for="inlineCheckbox2">Other</label>
+      </div>
+    </div>
+  </div>
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
     <div class="col-sm-10">
@@ -49,7 +66,7 @@ const AddPost = () => {
   
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Submit Post</button>
+      <button type="submit" class="btn btn-primary" onClick={submitPost}>Submit Post</button>
     </div>
   </div>
 </form>
