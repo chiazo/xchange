@@ -21,20 +21,22 @@ html {
   box-sizing: border-box;
   max-width: 390px;
   width: 100%;
-  max-height: 844px;
+  min-height: 844px;
   height: 100%;
   line-height: 1.4;
   scroll-behavior: smooth;
   box-sizing: border-box;
   background-color: var(--bg-color);
   font-size: 18px;
+  border: 1px solid black;
 }
 
 .masthead {
   margin-bottom: 0.5rem;
 }
 
-.masthead button {
+.masthead button,
+.profile-pic {
   background-color: var(--header-color);
   border: 2px solid #444444;
   width: 48px;
@@ -42,12 +44,171 @@ html {
   border-radius: 50%;
 }
 
+.discussion-post .card {
+  border: none;
+}
+
+.row .discussion-profile-pic {
+  max-width: 60px;
+}
+
+.discussion-post-title {
+  border: 1.5px solid #444444;
+  border-radius: 5px;
+  text-align: left;
+}
+
+
+.discussion-post-title.card-title.h5 {
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+.discussion-post-category {
+  min-width: 65px;
+}
+
+.discussion-post .categories {
+  margin-top: 12px;
+}
+
+.discussion-post-category.card-subtitle.h6 {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.discussion-post-body.card-body {
+  border: 1.5px solid #444444;
+  border-radius: 5px;
+  margin: 12px;
+  padding: 10px;
+}
+
+.comment-body.card-body {
+  padding: 10px;
+}
+
+.comment .votes.col-3 {
+  width: 15%;
+  padding: 0;
+}
+
+.comment-text.col-9 {
+  padding-left: 0;
+  width: 85%;
+}
+
+.comment-body {
+  border: 1.5px solid #444444;
+  border-radius: 5px;
+}
+
+.ending-text {
+  margin-top: 20px;
+  font-weight: 400;
+  color: #a0a0a0;
+}
+
+.discussion-post-details {
+  font-size: 12px;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: rgba(175, 212, 255, 0.5);
+}
+
+.discussion-post-details .col-4:first-child {
+  min-width: 114px;
+  padding-right: 0;
+}
+
+.comment-body.card-body>div:first-child {
+  margin-bottom: 5px;
+}
+
+.comment-settings {
+  background-color: transparent;
+  border: none;
+  font-weight: 800;
+}
+
+.comment-reply {
+  background-color: transparent;
+  border: 1.5px solid #444444;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.col-10.comment-text {
+  padding-right: 0;
+}
+
+.col-2.reply-button {
+  padding: 0;
+}
+
+.discussion-post-details .col-1 {
+  padding: 0;
+  max-width: 14px;
+}
+
+.discussion-post-details .col-4:last-child {
+  min-width: 110px;
+  padding-left: 0;
+}
+
+.comment-details {
+  background-color: rgba(209, 209, 209, 0.5);
+  border-radius: 6px;
+  height: 30px;
+  padding: 7px 8px;
+}
+
+.comment-details p {
+  font-weight: 400;
+  margin: 0;
+}
+
+.comment-author.col-5 {
+  padding: 0;
+  margin: 0;
+}
+
+.row.comment-details {
+  margin: 0px 5px;
+}
+
+.comment-author-date.col-8 {
+  padding-right: 0;
+}
+
+.comment-date.col-7 {
+  padding-left: 6px;
+  margin: 0;
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  ;
+}
+
+.comment-body {
+  padding: 0;
+}
+
+
+.comment.card {
+  margin-top: 14px;
+}
+
+.discussion-post-body.card-body p,
+.comment.card p {
+  font-size: 10px;
+  text-align: left;
+}
+
 /* body */
 
 body {
   box-sizing: border-box;
   min-height: 100%;
-  border: 1px solid black;
 }
 
 /* == HEADERS == */
@@ -157,14 +318,17 @@ h4 {
 }
 
 @media only screen and (min-width: 395px) {
-  .add-post-button {
-    left: 22%;
-    top: 75%;
+
+  .add-post-button,
+  .add-comment-button {
+    left: 300px;
+    top: 400px;
   }
 }
 
 
-.add-post-button {
+.add-post-button,
+.add-comment-button {
   right: 7%;
   bottom: 15%;
   position: fixed;
@@ -229,20 +393,29 @@ h4 {
   border-radius: 50%;
   margin-top: 2px;
   border: 1.4px solid black;
-  height: 25px;
+  padding: 2px 3px;
 }
 
-.preview-upvote button {
+.comment-voting button {
+  border-radius: 50%;
+  margin-top: 2px;
+  border: 1.4px solid black;
+  padding: 2px 7px;
+}
+
+.comment-voting .vote-count {
+  font-size: 12px;
+}
+
+.preview-upvote button,
+.comment-upvote button {
   background-color: rgb(173, 217, 158, 0.6);
 }
 
-.preview-downvote button {
+.preview-downvote button,
+.comment-downvote button {
   background-color: rgb(215, 162, 162, 0.6);
 }
-
-.preview-upvote {}
-
-.preview-downvote {}
 
 .discussion {
   position: absolute;
