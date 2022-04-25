@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap");
 
 /* == HTML == */
+
 *,
 *:before,
 *:after {
@@ -17,24 +18,34 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+textarea:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
 html {
   box-sizing: border-box;
   max-width: 390px;
   width: 100%;
-  max-height: 844px;
+  min-height: 844px;
   height: 100%;
   line-height: 1.4;
   scroll-behavior: smooth;
   box-sizing: border-box;
   background-color: var(--bg-color);
   font-size: 18px;
+  border: 1px solid black;
 }
 
 .masthead {
   margin-bottom: 0.5rem;
 }
 
-.masthead button {
+.masthead button,
+.profile-pic {
   background-color: var(--header-color);
   border: 2px solid #444444;
   width: 48px;
@@ -42,12 +53,198 @@ html {
   border-radius: 50%;
 }
 
+.discussion-post .card {
+  border: none;
+}
+
+.row .discussion-profile-pic {
+  max-width: 60px;
+}
+
+.discussion-post-title {
+  border: 1.5px solid #444444;
+  border-radius: 5px;
+  text-align: left;
+}
+
+
+.discussion-post-title.card-title.h5 {
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+.discussion-post-category {
+  min-width: 65px;
+}
+
+.discussion-post .categories {
+  margin-top: 12px;
+}
+
+.discussion-post-category.card-subtitle.h6 {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.discussion-post-body.card-body {
+  border: 1.5px solid #444444;
+  border-radius: 5px;
+  margin: 12px;
+  padding: 10px;
+}
+
+.comment-input {
+  margin-top: 10px;
+}
+
+.comment-input textarea {
+  border: 1.5px solid #444444;
+  height: 80px;
+  font-size: 12px;
+  resize: none;
+}
+
+.comment-input button {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 0px 20px;
+  box-shadow: 3px 4px 4px rgb(166, 165, 165);
+}
+
+.comment-body.card-body {
+  padding: 10px;
+}
+
+.comment .votes.col-3 {
+  width: 15%;
+  padding: 12px 0px;
+}
+
+.comment-text.col-9 {
+  padding-left: 0;
+  width: 85%;
+}
+
+.comment-body {
+  border: 1.5px solid #444444;
+  border-radius: 5px;
+}
+
+.ending-text {
+  margin-top: 20px;
+  font-weight: 400;
+  color: #a0a0a0;
+}
+
+.discussion-post-details {
+  font-size: 12px;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: rgba(175, 212, 255, 0.5);
+}
+
+.discussion-post-details .col-4:first-child {
+  min-width: 114px;
+  padding-right: 0;
+}
+
+.comment-body.card-body>div:first-child {
+  margin-bottom: 5px;
+}
+
+.comment-settings {
+  background-color: transparent;
+  border: none;
+  font-weight: 800;
+}
+
+.comment-reply {
+  background-color: transparent;
+  border: 1.5px solid #444444;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.col-10.comment-text {
+  padding-right: 0;
+}
+
+.col-2.reply-button {
+  padding: 0;
+}
+
+.discussion-post-details .col-1 {
+  padding: 0;
+  max-width: 14px;
+}
+
+.discussion-post-details .col-4:last-child {
+  min-width: 110px;
+  padding-left: 0;
+}
+
+.comment-details {
+  background-color: rgba(209, 209, 209, 0.5);
+  border-radius: 6px;
+  height: 30px;
+  padding: 7px 8px;
+}
+
+.comment-details p {
+  font-weight: 400;
+  margin: 0;
+}
+
+.comment-author.col-5 {
+  padding: 0;
+  margin: 0;
+}
+
+.row.comment-details {
+  margin: 0px 5px;
+}
+
+.comment-author-date.col-8 {
+  padding-right: 0;
+}
+
+.comment-date.col-7 {
+  padding-left: 6px;
+  margin: 0;
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  ;
+}
+
+.comment-date.col-7 p {
+  width: 90px;
+}
+
+.comment-body {
+  padding: 0;
+}
+
+
+.comment.card {
+  margin-top: 14px;
+}
+
+.discussion-post-body.card-body p,
+.comment.card p {
+  font-size: 10px;
+  text-align: left;
+}
+
 /* body */
+
+.contract h7 {
+  text-decoration: underline;
+}
 
 body {
   box-sizing: border-box;
   min-height: 100%;
-  border: 1px solid black;
 }
 
 /* == HEADERS == */
@@ -96,7 +293,7 @@ h4 {
 /* Post Preview */
 
 .preview.card .col-9,
-.preview-body.card-body > .row,
+.preview-body.card-body>.row,
 .preview-body.card-body .col-4 {
   background-color: rgb(238, 246, 254);
 }
@@ -116,7 +313,7 @@ h4 {
   background-color: rgb(238, 246, 254);
 }
 
-.preview.card > .row {
+.preview.card>.row {
   margin: 0;
 }
 
@@ -146,11 +343,6 @@ h4 {
   margin-top: 1rem;
 }
 
-.add-post-button {
-  right: 0;
-  bottom: 15%;
-}
-
 .upvoted {
   color: green;
   background-color: rgb(234, 255, 234);
@@ -161,8 +353,11 @@ h4 {
   background-color: rgb(255, 223, 223);
 }
 
-.add-post-button {
-  position: absolute;
+.add-post-button,
+.add-comment-button {
+  right: 7%;
+  bottom: 15%;
+  position: fixed;
   z-index: 1;
   width: 70px;
   height: 70px;
@@ -175,7 +370,7 @@ h4 {
 }
 
 .preview-body.card-body {
-  padding: 10px;
+  padding: 10px 0px;
 }
 
 .category.col-4 {
@@ -224,21 +419,29 @@ h4 {
   border-radius: 50%;
   margin-top: 2px;
   border: 1.4px solid black;
-  height: 25px;
+  padding: 2px 3px;
 }
 
-.preview-upvote button {
+.comment-voting button {
+  border-radius: 50%;
+  margin-top: 2px;
+  border: 1.4px solid black;
+  padding: 2px 7px;
+}
+
+.comment-voting .vote-count {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.preview-upvote button,
+.comment-upvote button {
   background-color: rgb(173, 217, 158, 0.6);
 }
 
-.preview-downvote button {
+.preview-downvote button,
+.comment-downvote button {
   background-color: rgb(215, 162, 162, 0.6);
-}
-
-.preview-upvote {
-}
-
-.preview-downvote {
 }
 
 .discussion {
@@ -320,7 +523,7 @@ h4 {
   height: 53px;
 }
 
-.form-group > .form-control {
+.form-group>.form-control {
   border: 3px solid var(--title-color);
   box-shadow: 3px 4px grey;
 }
@@ -365,8 +568,7 @@ h4 {
 }
 
 .bottom-space {
-  height: 58px;
-  display: inline-block;
+  height: 60px;
   padding-bottom: 0px;
 }
 
@@ -463,4 +665,170 @@ p {
 
 .dropdown:hover .dropbtn {
   background-color: rgb(239, 239, 239);
+}
+
+#profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  border: 2px solid black;
+
+}
+
+#edit-icon {
+  width: 15px;
+  height: 15px;
+  margin: auto;
+}
+
+
+.edit-box {
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0px;
+  right: 15px;
+  margin: auto;
+  box-shadow: 3px 5px 5px #b3b2b2;
+}
+
+.edit-box2 {
+  background-color: white;
+  position: relative;
+  right: 0;
+  margin-right: 40px;
+  border: 1px solid black;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin-top: -5%;
+}
+
+.profile-edit {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
+
+#profile-name {
+  padding-top: 10px;
+  font-size: 30px;
+  margin: auto;
+}
+
+#profile-username {
+  color: #7D7D7D;
+}
+
+#profile {
+  background: rgb(175, 212, 255, 0.1);
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 3px 5px 5px #b3b2b2;
+}
+
+#profile h1 {
+  font-size: 18px;
+  text-align: left;
+  margin-left: 10px;
+  padding-bottom: 3px;
+  padding-top: 6px;
+}
+
+.about-me p {
+  margin-top: 5px;
+  margin-left: 10px;
+  text-align: left;
+  font-weight: 0px;
+  font-size: 12px;
+  line-height: 0px;
+}
+
+
+.interest {
+  position: relative;
+  display: flex;
+}
+
+
+.edit-box3 {
+  background-color: white;
+  position: absolute;
+  right: 23px;
+  bottom: 20px;
+  border: 1px solid black;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin-top: -5%;
+  box-shadow: 3px 3px 5px #c2bfbf;
+}
+
+.interest p {
+  margin-left: 15px;
+  font-weight: 0px;
+  font-size: 10px;
+  border: 1px solid black;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #c2bfbf;
+
+}
+
+#profile-space {
+  height: 100px;
+}
+
+#field {
+  background-color: #E6E6E6;
+  border: none;
+  box-shadow: none;
+}
+
+#password {
+  border: none;
+  box-shadow: none;
+}
+
+#privacy-edit {
+  position: absolute;
+  left: 317px;
+}
+
+.contract {
+  display: none;
+}
+
+
+
+@media only screen and (min-width: 395px) {
+  .contract {
+    display: block;
+    border: 5px solid var(--header-color);
+    box-shadow: 4px 4px 4px grey;
+    padding: 10px;
+    position: fixed;
+    left: 70%;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .contract h3 {
+    font-size: 20px;
+    color: rgb(32, 32, 32);
+  }
+
+  .add-post-button,
+  .add-comment-button {
+    left: 300px;
+    top: 440px;
+  }
 }

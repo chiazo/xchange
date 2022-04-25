@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer">
       <div className="row align-items-end text-center">
         <div className="nav-button col">
-          <Link to="/">
+          <Link to="/xchange/">
             <div>
               <img
                 className="nav-button-icon"
@@ -19,7 +19,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="nav-button col">
-          <Link to="/discussions">
+          <Link to="/xchange/discussions">
             <div>
               <img
                 className="nav-button-icon"
@@ -32,7 +32,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="nav-button col">
-          <Link to="/exchange">
+          <Link to="/xchange/exchange">
             <div>
               <img
                 className="nav-button-icon"
