@@ -217,6 +217,10 @@ html {
   ;
 }
 
+.comment-date.col-7 p {
+  width: 90px;
+}
+
 .comment-body {
   padding: 0;
 }
