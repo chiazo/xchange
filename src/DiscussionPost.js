@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import { useParams, useLocation } from "react-router-dom";
 
 import Comment from "./components/comment";
+import { user } from "./data/user";
 
 const DiscussionPost = ({ posts }) => {
   const { id } = useParams();
@@ -23,20 +24,19 @@ const DiscussionPost = ({ posts }) => {
   };
 
   const submitComment = () => {
-    setComments([
-      ...comments,
-      {
-        submission: currComment,
-        status: false,
-        author: "@adamj22",
-        icon: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
-        date: new Date("2022-03-04T03:24:00"),
-        upvotes: 0,
-        downvotes: 0,
-        upvoted: true,
-        downvoted: false,
-      },
-    ]);
+    const newComment = {
+      submission: currComment,
+      status: user.status,
+      author: user.username,
+      icon: user.icon,
+      date: new Date("2022-03-04T03:24:00"),
+      upvotes: 1,
+      downvotes: 0,
+      upvoted: true,
+      downvoted: false,
+    };
+    setComments([...comments, newComment]);
+    posts[id].comments = [...posts[id].comments, newComment];
     setWritingComment(false);
   };
 
@@ -115,7 +115,7 @@ const DiscussionPost = ({ posts }) => {
         <div className="row">
           <div className="col-9">
             <div className="row discussion-post-details">
-              <div className="col-4">By: {author} </div>
+              <div className="col-4">By: @{author} </div>
               <div className="col-1">|</div>
               <div className="col-4">{date.toDateString()}</div>
             </div>
@@ -129,12 +129,14 @@ const DiscussionPost = ({ posts }) => {
       <div className="comment-input">
         {writingComment && (
           <form>
-            <input
-              type="text"
+            <textarea
+              name="text"
+              rows="3"
+              cols="10"
               className="form-control"
               onChange={updateComment}
               placeholder="Write your comment here!"
-            ></input>
+            ></textarea>
             <button onClick={submitComment} className="submit-comment">
               Submit Comment
             </button>

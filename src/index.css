@@ -17,6 +17,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+textarea:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
 html {
   box-sizing: border-box;
   max-width: 390px;
@@ -84,13 +92,32 @@ html {
   padding: 10px;
 }
 
+.comment-input {
+  margin-top: 10px;
+}
+
+.comment-input textarea {
+  border: 1.5px solid #444444;
+  height: 80px;
+  font-size: 12px;
+  resize: none;
+}
+
+.comment-input button {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 0px 20px;
+  box-shadow: 3px 4px 4px rgb(166, 165, 165);
+}
+
 .comment-body.card-body {
   padding: 10px;
 }
 
 .comment .votes.col-3 {
   width: 15%;
-  padding: 0;
+  padding: 12px 0px;
 }
 
 .comment-text.col-9 {
@@ -405,6 +432,7 @@ h4 {
 
 .comment-voting .vote-count {
   font-size: 12px;
+  font-weight: 500;
 }
 
 .preview-upvote button,

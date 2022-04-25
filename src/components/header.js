@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { user } from "../data/user";
 
 const Header = () => (
   <header className="masthead">
@@ -12,7 +13,7 @@ const Header = () => (
         </div>
         <div className="col-3">
           <Link to="/profile-page" style={{ textDecoration: "none" }}>
-            <button></button>
+            <img className="profile-pic" alt="profile pic" src={user.icon} />
           </Link>
         </div>
       </div>

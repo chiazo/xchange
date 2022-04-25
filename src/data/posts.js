@@ -13,7 +13,7 @@ export const posts = [
     submission:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     status: Status.Public,
-    author: "@adamj22",
+    author: "adamj22",
     icon: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
     date: new Date("2022-03-04T03:24:00"),
     upvotes: 500,
@@ -25,7 +25,7 @@ export const posts = [
         submission:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         status: Status.Public,
-        author: "@samk34",
+        author: "samk34",
         icon: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
         date: new Date("2022-03-04T03:24:00"),
         upvotes: 500,
@@ -43,7 +43,7 @@ export const posts = [
     submission:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     status: Status.Anon,
-    author: "@lilyw2",
+    author: "lilyw2",
     icon: "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
     date: new Date("2022-05-04T03:24:00"),
     upvotes: 470,
@@ -55,7 +55,7 @@ export const posts = [
         submission:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         status: Status.Public,
-        author: "@adamj22",
+        author: "adamj22",
         icon: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
         date: new Date("2022-03-04T03:24:00"),
         upvotes: 500,
@@ -73,7 +73,7 @@ export const posts = [
     submission:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     status: Status.Anon,
-    author: "@samk34",
+    author: "samk34",
     icon: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
     date: new Date("2022-06-14T03:24:00"),
     upvotes: 404,
@@ -85,7 +85,7 @@ export const posts = [
         submission:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         status: Status.Public,
-        author: "@adamj22",
+        author: "adamj22",
         icon: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
         date: new Date("2022-03-04T03:24:00"),
         upvotes: 500,
@@ -103,7 +103,7 @@ export const posts = [
     submission:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     status: Status.Anon,
-    author: "@johnnydoescs",
+    author: "johnnydoescs",
     icon: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
     date: new Date("2022-10-24T03:24:00"),
     upvotes: 323,
@@ -115,7 +115,7 @@ export const posts = [
         submission:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         status: Status.Public,
-        author: "@adamj22",
+        author: "adamj22",
         icon: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
         date: new Date("2022-03-04T03:24:00"),
         upvotes: 500,
@@ -133,7 +133,7 @@ export const posts = [
     submission:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     status: Status.Public,
-    author: "@williamspage",
+    author: "williamspage",
     icon: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
     date: new Date("2022-11-23T03:24:00"),
     upvotes: 200,
@@ -145,7 +145,7 @@ export const posts = [
         submission:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         status: Status.Public,
-        author: "@adamj22",
+        author: "adamj22",
         icon: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200",
         date: new Date("2022-03-04T03:24:00"),
         upvotes: 500,

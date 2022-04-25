@@ -5,7 +5,6 @@ export const Comment = ({
   id,
   parentId,
   author,
-  title,
   submission,
   status,
   icon,
@@ -79,7 +78,7 @@ export const Comment = ({
               <div className="comment-author-date col-8">
                 <div className="row comment-details">
                   <div className="comment-author col-5">
-                    <p>By: {author}</p>
+                    <p>By: @{author}</p>
                   </div>
                   <div className="comment-date col-7">
                     <p>{new Date().toDateString()}</p>
