@@ -15,36 +15,74 @@ import Profile from "./Profile";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Index = () => (
-  <div className="main">
-    <BrowserRouter>
-      <Header />
-      <div>
-        <Switch>
-          <Route exact path="/">
-            <Home posts={posts} />
-          </Route>
-          <Route path="/discussions">
-            <Discussion posts={posts} />
-          </Route>
-          <Route path="/post/:id">
-            <DiscussionPost posts={posts} />
-          </Route>
-          <Route path="/add-post">
-            <AddPost />
-          </Route>
-          <Route path="/exchange">
-            <Exchange />
-          </Route>
-          <Route path="/profile-page">
-            <Profile />
-          </Route>
-        </Switch>
-      </div>
+const Index = () => {
+  const contract = [
+    {
+      page: "Home Page",
+      requirements: ["Hardcode home page design"],
+    },
+    {
+      page: "Profile Page",
+      requirements: ["Add or remove interests", "Ability to edit status"],
+    },
+    {
+      page: "Discussions Page",
+      requirements: [
+        "Hardcode discussions page design",
+        "Allow parent comments only",
+        "Allow upvoting and downvoting",
+        "Connect voting across pages",
+      ],
+    },
+    {
+      page: "Market Page",
+      requirements: ["Hardcode market page design", "add coming soon popup"],
+    },
+  ];
+  return (
+    <div className="main">
+      <BrowserRouter>
+        <Header />
+        <div>
+          <Switch>
+            <Route exact path="/">
+              <Home posts={posts} />
+            </Route>
+            <Route path="/discussions">
+              <Discussion posts={posts} />
+            </Route>
+            <Route path="/post/:id">
+              <DiscussionPost posts={posts} />
+            </Route>
+            <Route path="/add-post">
+              <AddPost />
+            </Route>
+            <Route path="/exchange">
+              <Exchange />
+            </Route>
+            <Route path="/profile-page">
+              <Profile />
+            </Route>
+          </Switch>
+        </div>
 
-      <Footer />
-    </BrowserRouter>
-  </div>
-);
+        <Footer />
+      </BrowserRouter>
+      <div className="contract">
+        <h3>Contract Requirements</h3>
+        {contract.map(({ page, requirements }) => (
+          <div>
+            <h7>{page}:</h7>
+            <ul>
+              {requirements.map((r, idx) => (
+                <li key={idx}>{r}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 ReactDOM.render(<Index />, document.getElementById("root"));

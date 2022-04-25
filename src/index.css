@@ -233,6 +233,25 @@ html {
 
 /* body */
 
+.contract {
+  border: 5px solid var(--header-color);
+  box-shadow: 4px 4px 4px grey;
+  padding: 10px;
+  position: fixed;
+  left: 70%;
+  font-size: 15px;
+  text-align: left;
+}
+
+.contract h3 {
+  font-size: 20px;
+  color: rgb(32, 32, 32);
+}
+
+.contract h7 {
+  text-decoration: underline;
+}
+
 body {
   box-sizing: border-box;
   min-height: 100%;
@@ -657,4 +676,140 @@ p {
 
 .dropdown:hover .dropbtn {
   background-color: rgb(239, 239, 239);
+}
+
+#profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  border: 2px solid black;
+
+}
+
+#edit-icon {
+  width: 15px;
+  height: 15px;
+  margin: auto;
+}
+
+
+.edit-box {
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0px;
+  right: 15px;
+  margin: auto;
+  box-shadow: 3px 5px 5px #b3b2b2;
+}
+
+.edit-box2 {
+  background-color: white;
+  position: relative;
+  right: 0;
+  margin-right: 40px;
+  border: 1px solid black;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin-top: -5%;
+}
+
+.profile-edit {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
+
+#profile-name {
+  padding-top: 10px;
+  font-size: 30px;
+  margin: auto;
+}
+
+#profile-username {
+  color: #7D7D7D;
+}
+
+#profile {
+  background: rgb(175, 212, 255, 0.1);
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 3px 5px 5px #b3b2b2;
+}
+
+#profile h1 {
+  font-size: 18px;
+  text-align: left;
+  margin-left: 10px;
+  padding-bottom: 3px;
+  padding-top: 6px;
+}
+
+.about-me p {
+  margin-top: 5px;
+  margin-left: 10px;
+  text-align: left;
+  font-weight: 0px;
+  font-size: 12px;
+  line-height: 0px;
+}
+
+
+.interest {
+  position: relative;
+  display: flex;
+}
+
+
+.edit-box3 {
+  background-color: white;
+  position: absolute;
+  right: 23px;
+  bottom: 20px;
+  border: 1px solid black;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin-top: -5%;
+  box-shadow: 3px 3px 5px #c2bfbf;
+}
+
+.interest p {
+  margin-left: 15px;
+  font-weight: 0px;
+  font-size: 10px;
+  border: 1px solid black;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #c2bfbf;
+
+}
+
+#profile-space {
+  height: 100px;
+}
+
+#field {
+  background-color: #E6E6E6;
+  border: none;
+  box-shadow: none;
+}
+
+#password {
+  border: none;
+  box-shadow: none;
+}
+
+#privacy-edit {
+  position: absolute;
+  left: 317px;
 }
