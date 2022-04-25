@@ -96,7 +96,7 @@ h4 {
 /* Post Preview */
 
 .preview.card .col-9,
-.preview-body.card-body > .row,
+.preview-body.card-body>.row,
 .preview-body.card-body .col-4 {
   background-color: rgb(238, 246, 254);
 }
@@ -116,7 +116,7 @@ h4 {
   background-color: rgb(238, 246, 254);
 }
 
-.preview.card > .row {
+.preview.card>.row {
   margin: 0;
 }
 
@@ -146,11 +146,6 @@ h4 {
   margin-top: 1rem;
 }
 
-.add-post-button {
-  right: 0;
-  bottom: 15%;
-}
-
 .upvoted {
   color: green;
   background-color: rgb(234, 255, 234);
@@ -161,8 +156,18 @@ h4 {
   background-color: rgb(255, 223, 223);
 }
 
+@media only screen and (min-width: 395px) {
+  .add-post-button {
+    left: 22%;
+    top: 75%;
+  }
+}
+
+
 .add-post-button {
-  position: absolute;
+  right: 7%;
+  bottom: 15%;
+  position: fixed;
   z-index: 1;
   width: 70px;
   height: 70px;
@@ -175,7 +180,7 @@ h4 {
 }
 
 .preview-body.card-body {
-  padding: 10px;
+  padding: 10px 0px;
 }
 
 .category.col-4 {
@@ -235,11 +240,9 @@ h4 {
   background-color: rgb(215, 162, 162, 0.6);
 }
 
-.preview-upvote {
-}
+.preview-upvote {}
 
-.preview-downvote {
-}
+.preview-downvote {}
 
 .discussion {
   position: absolute;
@@ -320,7 +323,7 @@ h4 {
   height: 53px;
 }
 
-.form-group > .form-control {
+.form-group>.form-control {
   border: 3px solid var(--title-color);
   box-shadow: 3px 4px grey;
 }
@@ -589,8 +592,4 @@ p {
   position: absolute;
   left: 317px; 
 }
-
-
-
-
 

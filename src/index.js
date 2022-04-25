@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Header, Footer } from "./components";
+import { posts } from "./data/posts";
+
 import Home from "./Home";
 import Discussion from "./Discussion";
 import DiscussionPost from "./DiscussionPost";
@@ -20,13 +22,13 @@ const Index = () => (
       <div>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home posts={posts} />
           </Route>
           <Route path="/discussions">
-            <Discussion />
+            <Discussion posts={posts} />
           </Route>
           <Route path="/post/:id">
-            <DiscussionPost />
+            <DiscussionPost posts={posts} />
           </Route>
           <Route path="/add-post">
             <AddPost />

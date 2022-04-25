@@ -19,24 +19,24 @@ const Exchange = () => {
             <div className="col-5">
               <div className="row">
                 <div className="col-5">
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button className="dropbtn">Filter</button>
-                    <div class="dropdown-content">
-                      <a href="#">Clothing</a>
-                      <a href="#">School</a>
-                      <a href="#">Home</a>
-                      <a href="#">Service</a>
+                    <div className="dropdown-content">
+                      <a href="#void">Clothing</a>
+                      <a href="#void">School</a>
+                      <a href="#void">Home</a>
+                      <a href="#void">Service</a>
                     </div>
                   </div>
                 </div>
                 <div className="col-5">
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button className="dropbtn">Sort</button>
-                    <div class="dropdown-content">
-                      <a href="#">Lowest Price</a>
-                      <a href="#">Highest Price</a>
-                      <a href="#">Most Recent</a>
-                      <a href="#">Most Popular</a>
+                    <div className="dropdown-content">
+                      <a href="#void">Lowest Price</a>
+                      <a href="#void">Highest Price</a>
+                      <a href="#void">Most Recent</a>
+                      <a href="#void">Most Popular</a>
                     </div>
                   </div>
                 </div>
@@ -47,8 +47,8 @@ const Exchange = () => {
         <h5 id="header2">Top Picks for William</h5>
         <div className="grid">
           <div className="d-flex justify-content-around">
-            {items1.map(({ title, price, picture }) => (
-              <div className="col-sm">
+            {items1.map(({ title, price, picture }, idx) => (
+              <div className="col-sm" key={idx}>
                 <div className="item">
                   <a href="default.asp">
                     <img alt="item-pic" src={picture} />
@@ -62,8 +62,8 @@ const Exchange = () => {
             ))}
           </div>
           <div className="d-flex justify-content-around">
-            {items2.map(({ title, price, picture }) => (
-              <div className="col-sm">
+            {items2.map(({ title, price, picture }, idx) => (
+              <div className="col-sm" key={idx + 10}>
                 <div className="item">
                   <div className="item">
                     <a href="default.asp">
@@ -95,7 +95,7 @@ const Exchange = () => {
               ))}
             </div>
           </div>
-          <div class="bottom-space"></div>
+          <div className="bottom-space"></div>
         </div>
       </div>
     </div>
