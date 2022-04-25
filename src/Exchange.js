@@ -1,6 +1,6 @@
 import React from "react";
 import { items1, items2 } from "./data/items.js";
-import { users } from "./data/users.js";
+import { sellers } from "./data/sellers.js";
 const Exchange = () => {
   return (
     <div className="exchange">
@@ -81,7 +81,7 @@ const Exchange = () => {
           <h5> Your Favorite Sellers</h5>
           <div className="grid">
             <div className="d-flex justify-content-around">
-              {users.map(({ username, profile_pic }) => (
+              {sellers.map(({ username, profile_pic }) => (
                 <div className="col-sm">
                   <div className="item">
                     <div className="item">
