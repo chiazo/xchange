@@ -36,7 +36,7 @@ const Index = () => {
     },
     {
       page: "Market Page",
-      requirements: ["Hardcode market page design", "add coming soon popup"],
+      requirements: ["Hardcode market page design", "Add coming soon popup"],
     },
   ];
   return (

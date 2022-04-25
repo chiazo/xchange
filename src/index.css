@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap");
 
 /* == HTML == */
+
 *,
 *:before,
 *:after {
@@ -233,21 +234,6 @@ html {
 
 /* body */
 
-.contract {
-  border: 5px solid var(--header-color);
-  box-shadow: 4px 4px 4px grey;
-  padding: 10px;
-  position: fixed;
-  left: 70%;
-  font-size: 15px;
-  text-align: left;
-}
-
-.contract h3 {
-  font-size: 20px;
-  color: rgb(32, 32, 32);
-}
-
 .contract h7 {
   text-decoration: underline;
 }
@@ -362,16 +348,6 @@ h4 {
   color: red;
   background-color: rgb(255, 223, 223);
 }
-
-@media only screen and (min-width: 395px) {
-
-  .add-post-button,
-  .add-comment-button {
-    left: 300px;
-    top: 400px;
-  }
-}
-
 
 .add-post-button,
 .add-comment-button {
@@ -811,4 +787,34 @@ p {
 #privacy-edit {
   position: absolute;
   left: 317px;
+}
+
+.contract {
+  display: none;
+}
+
+
+
+@media only screen and (min-width: 395px) {
+  .contract {
+    display: block;
+    border: 5px solid var(--header-color);
+    box-shadow: 4px 4px 4px grey;
+    padding: 10px;
+    position: fixed;
+    left: 70%;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .contract h3 {
+    font-size: 20px;
+    color: rgb(32, 32, 32);
+  }
+
+  .add-post-button,
+  .add-comment-button {
+    left: 300px;
+    top: 440px;
+  }
 }
