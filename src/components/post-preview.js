@@ -44,7 +44,7 @@ export const PostPreview = ({
           <div className="col-9">
             <Link
               to={{
-                pathname: `/post/${id}`,
+                pathname: `/xchange/post/${id}`,
                 state: { post: allPosts[id] },
               }}
               style={{ textDecoration: "none" }}

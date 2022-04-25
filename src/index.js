@@ -45,22 +45,22 @@ const Index = () => {
         <Header />
         <div>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/xchange/">
               <Home posts={posts} />
             </Route>
-            <Route path="/discussions">
+            <Route path="/xchange/discussions">
               <Discussion posts={posts} />
             </Route>
-            <Route path="/post/:id">
+            <Route path="/xchange/post/:id">
               <DiscussionPost posts={posts} />
             </Route>
-            <Route path="/add-post">
+            <Route path="/xchange/add-post">
               <AddPost />
             </Route>
-            <Route path="/exchange">
+            <Route path="/xchange/exchange">
               <Exchange />
             </Route>
-            <Route path="/profile-page">
+            <Route path="/xchange/profile-page">
               <Profile />
             </Route>
           </Switch>
