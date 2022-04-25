@@ -14,7 +14,15 @@ const Header = () => (
           <Link to="/profile-page" style={{ textDecoration: "none" }}>
             <button></button>
           </Link>
+          <Link to="/add-post" style={{ textDecoration: "none" }}>
+              <button>+</button>
+          </Link>
         </div>
+        
+      </div>
+      <div className="row">
+        
+       
       </div>
     </div>
   </header>
