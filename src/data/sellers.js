@@ -1,4 +1,4 @@
-export const users = [
+export const sellers = [
   {
     username: "chiazo42",
     profile_pic: "https://avatars.githubusercontent.com/u/30136716?v=4",
