@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -16,6 +16,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Index = () => {
+  const [allPosts, setAllPosts] = useState(posts);
   const contract = [
     {
       page: "Home Page",
@@ -46,16 +47,16 @@ const Index = () => {
         <div>
           <Switch>
             <Route exact path="/xchange/">
-              <Home posts={posts} />
+              <Home posts={allPosts} />
             </Route>
             <Route path="/xchange/discussions">
-              <Discussion posts={posts} />
+              <Discussion posts={allPosts} />
             </Route>
             <Route path="/xchange/post/:id">
-              <DiscussionPost posts={posts} />
+              <DiscussionPost posts={allPosts} />
             </Route>
             <Route path="/xchange/add-post">
-              <AddPost />
+              <AddPost posts={allPosts} setAllPosts={setAllPosts} />
             </Route>
             <Route path="/xchange/exchange">
               <Exchange />
