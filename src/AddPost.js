@@ -37,8 +37,6 @@ export const AddPost = ({ posts, setAllPosts }) => {
   };
 
   const submitPost = () => {
-    // e.preventDefault();
-    // console.log("before submit:",posts)
     const newPost = {
       id: posts.length,
       type: currType,
@@ -63,9 +61,9 @@ export const AddPost = ({ posts, setAllPosts }) => {
       <div id="content">
         <form>
           <fieldset className="form-group">
-            <div className="row">
-              <legend className="col-form-label col-sm-2 pt-0">Type</legend>
-              <div className="col-sm-10">
+            <div className="form-group row">
+              <label className="col-form-label col-sm-4 discussion-button dropdown add-post-options">Type</label>
+              <div className="col-sm-8">
                 <div className="custom-control custom-radio custom-control-inline">
                   <input
                     onClick={updateType}
@@ -102,8 +100,8 @@ export const AddPost = ({ posts, setAllPosts }) => {
             </div>
           </fieldset>
           <div className="form-group row">
-            <legend className="col-form-label col-sm-2 pt-0">Category</legend>
-            <div className="col-sm-10">
+            <legend className="col-form-label col-sm-4 pt-0 discussion-button dropdown add-post-options-category">Category</legend>
+            <div className="col-sm-8">
               <div className="form-check form-check-inline">
                 <input
                   onClick={updateCategory}
@@ -131,7 +129,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
             </div>
           </div>
           <div className="form-group row">
-            <label htmlFor="post-title" className="col-sm-2 col-form-label">
+            <label htmlFor="post-title" className="col-sm-2 col-form-label dropdown add-post-options">
               Title
             </label>
             <div className="col-sm-10">
@@ -147,14 +145,14 @@ export const AddPost = ({ posts, setAllPosts }) => {
           <div className="form-group row">
             <label
               htmlFor="exampleFormControlTextarea1"
-              className="col-sm-2 col-form-label"
+              className="col-sm-2 col-form-label dropdown add-post-options"
             >
               Text
             </label>
             <div className="col-sm-10">
               <textarea
                 onChange={updateText}
-                className="form-control"
+                className="form-control comment-input comment-body"
                 id="exampleFormControlTextarea1"
                 rows="3"
                 required
@@ -163,7 +161,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
           </div>
 
           <div className="form-group row">
-            <legend className="col-form-label col-sm-2 pt-0">Status</legend>
+            <legend className="col-form-label col-sm-2 pt-0 dropdown add-post-options">Status</legend>
             <div className="col-sm-10">
               <div className="custom-control custom-radio custom-control-inline">
                 <input
@@ -202,7 +200,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
 
           <div className="form-group row">
             <div className="col-sm-10">
-              <button className="btn btn-primary" onClick={submitPost}>
+              <button className="submit-comment" onClick={submitPost}>
                 Submit Post
               </button>
             </div>
