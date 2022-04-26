@@ -2,7 +2,6 @@ import { Post } from "../models/post.ts";
 import { posts } from "./posts";
 
 export const homePosts = [...posts.slice(0, 2)];
-export const discussionPosts = [...posts.slice(2)];
 
 export const postObjs = homePosts.map(
   (

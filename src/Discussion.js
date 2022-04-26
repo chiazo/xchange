@@ -1,9 +1,11 @@
 import React from "react";
-import { homePosts, discussionPosts } from "./data/homePosts";
+import { homePosts } from "./data/homePosts";
 import { Link } from "react-router-dom";
 import Preview from "./Preview";
 
 const Discussion = ({ posts }) => {
+  const discussionPosts = [...posts.slice(2)];
+
   return (
     <div className="discussion">
       <div id="content">
