@@ -24,6 +24,13 @@ const Profile = () => {
               <p>Major: Computer Science</p>
               <p>Graduation Term: Spring 2022</p>
             </div>
+            <div className="edit-box2">
+              <img
+                alt="edit"
+                id="edit-icon"
+                src="https://img.icons8.com/ios/50/000000/edit--v1.png"
+              />
+            </div>
           </div>
         </div>
         <div id="profile">
