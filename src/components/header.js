@@ -15,13 +15,7 @@ const Header = () => (
           <Link to="/xchange/profile-page" style={{ textDecoration: "none" }}>
             <img className="profile-pic" alt="profile pic" src={user.icon} />
           </Link>
-
         </div>
-        
-      </div>
-      <div className="row">
-        
-       
       </div>
     </div>
   </header>

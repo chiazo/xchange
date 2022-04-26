@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { user } from "./data/user";
-// import { posts } from "./data/posts";
 import { Status, Type, Category } from "./models/post";
 import { useHistory } from "react-router-dom";
 
-const AddPost = ({posts}) => {
+export const AddPost = ({ posts, setAllPosts }) => {
   const history = useHistory();
   const [currType, setCurrType] = useState(Type.Discussion);
   const [currCategories, setCurrCategories] = useState([
@@ -16,7 +15,6 @@ const AddPost = ({posts}) => {
 
   const updateType = (e) => {
     setCurrType(e.target.value);
-    // console.log("currType: ", e.target.value);
   };
 
   const updateCategory = (e) => {
@@ -24,22 +22,18 @@ const AddPost = ({posts}) => {
       (x) => x !== e.target.value
     );
     setCurrCategories([...filteredCategories, e.target.value]);
-    // console.log("currCategories: ", e.target.value);
   };
 
   const updateTitle = (e) => {
     setCurrTitle(e.target.value);
-    // console.log("currTitle: ", e.target.value);
   };
 
   const updateText = (e) => {
     setCurrText(e.target.value);
-    // console.log("currText: ", e.target.value);
   };
 
   const updateStatus = (e) => {
-    setCurrStatus(Number(e.target.value));
-    // console.log("currStatus: ", e.target.value);
+    setCurrStatus(e.target.value);
   };
 
   const submitPost = () => {
@@ -61,10 +55,7 @@ const AddPost = ({posts}) => {
       downvoted: false,
       comments: [],
     };
-
-    // posts.push(newPost);
-    posts = [...posts, newPost];
-    console.log("after submit:",posts)
+    setAllPosts([...posts, newPost]);
     history.push("/xchange/discussions");
   };
   return (
