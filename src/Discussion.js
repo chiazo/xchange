@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Preview from "./Preview";
 
 const Discussion = ({ posts }) => {
+
+  
   return (
     <div className="discussion">
       <div id="content">

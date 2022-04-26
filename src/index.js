@@ -55,7 +55,7 @@ const Index = () => {
               <DiscussionPost posts={posts} />
             </Route>
             <Route path="/xchange/add-post">
-              <AddPost />
+              <AddPost posts={posts}/>
             </Route>
             <Route path="/xchange/exchange">
               <Exchange />

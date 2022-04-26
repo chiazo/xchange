@@ -15,9 +15,7 @@ const Header = () => (
           <Link to="/xchange/profile-page" style={{ textDecoration: "none" }}>
             <img className="profile-pic" alt="profile pic" src={user.icon} />
           </Link>
-          <Link to="/add-post" style={{ textDecoration: "none" }}>
-              <button>+</button>
-          </Link>
+
         </div>
         
       </div>

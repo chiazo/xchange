@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { user } from "./data/user";
-import { posts } from "./data/posts";
+// import { posts } from "./data/posts";
 import { Status, Type, Category } from "./models/post";
 import { useHistory } from "react-router-dom";
 
-export const AddPost = () => {
+const AddPost = ({posts}) => {
   const history = useHistory();
-
   const [currType, setCurrType] = useState(Type.Discussion);
   const [currCategories, setCurrCategories] = useState([
     Category.MainCategories.Academics,
@@ -17,7 +16,7 @@ export const AddPost = () => {
 
   const updateType = (e) => {
     setCurrType(e.target.value);
-    console.log("currType: ", e.target.value);
+    // console.log("currType: ", e.target.value);
   };
 
   const updateCategory = (e) => {
@@ -25,26 +24,27 @@ export const AddPost = () => {
       (x) => x !== e.target.value
     );
     setCurrCategories([...filteredCategories, e.target.value]);
-    console.log("currCategories: ", e.target.value);
+    // console.log("currCategories: ", e.target.value);
   };
 
   const updateTitle = (e) => {
     setCurrTitle(e.target.value);
-    console.log("currTitle: ", e.target.value);
+    // console.log("currTitle: ", e.target.value);
   };
 
   const updateText = (e) => {
     setCurrText(e.target.value);
-    console.log("currText: ", e.target.value);
+    // console.log("currText: ", e.target.value);
   };
 
   const updateStatus = (e) => {
-    setCurrStatus(e.target.value);
-    console.log("currStatus: ", e.target.value);
+    setCurrStatus(Number(e.target.value));
+    // console.log("currStatus: ", e.target.value);
   };
 
-  const submitPost = (e) => {
-    e.preventDefault();
+  const submitPost = () => {
+    // e.preventDefault();
+    // console.log("before submit:",posts)
     const newPost = {
       id: posts.length,
       type: currType,
@@ -61,7 +61,10 @@ export const AddPost = () => {
       downvoted: false,
       comments: [],
     };
-    posts.push(newPost);
+
+    // posts.push(newPost);
+    posts = [...posts, newPost];
+    console.log("after submit:",posts)
     history.push("/xchange/discussions");
   };
   return (
