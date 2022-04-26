@@ -1,139 +1,220 @@
 import React, { useState } from "react";
-import {user} from "./data/user";
+import { user } from "./data/user";
 import { posts } from "./data/posts";
-import { Type } from "./models/post";
-import { Category } from "./models/homeItems";
-
+import { Status, Type, Category } from "./models/post";
+import { useHistory } from "react-router-dom";
 
 export const AddPost = () => {
-  
-  const [currPost, setCurrPost] = useState("");
+  const history = useHistory();
 
-  const [currType, setCurrType] = useState("");
-  const [currCategory, setCurrCategory] = useState("");
+  const [currType, setCurrType] = useState(Type.Discussion);
+  const [currCategories, setCurrCategories] = useState([
+    Category.MainCategories.Academics,
+  ]);
   const [currTitle, setCurrTitle] = useState("");
   const [currText, setCurrText] = useState("");
   const [currStatus, setCurrStatus] = useState("");
-  
-  let discussionSelect = false
-  
-  const updatePost = (e) => {
-    setCurrPost(e.target.value);
-    console.log("currPost: ", currPost);
-  }
 
   const updateType = (e) => {
     setCurrType(e.target.value);
-    discussionSelect = !discussionSelect;
-    console.log("currType: ", currType)
-  }
+    console.log("currType: ", e.target.value);
+  };
 
   const updateCategory = (e) => {
-    setCurrType(e.target.value);
-    console.log("currCategory: ", currType)
-  }
+    const filteredCategories = currCategories.filter(
+      (x) => x !== e.target.value
+    );
+    setCurrCategories([...filteredCategories, e.target.value]);
+    console.log("currCategories: ", e.target.value);
+  };
 
   const updateTitle = (e) => {
-    setCurrType(e.target.value);
-    console.log("currTitle: ", currType)
-  }
+    setCurrTitle(e.target.value);
+    console.log("currTitle: ", e.target.value);
+  };
 
   const updateText = (e) => {
-    setCurrType(e.target.value);
-    console.log("currText: ", currType)
-  }
-  
-  const updateStatus = (e) => {
-    setCurrType(e.target.value);
-    console.log("currStatus: ", currType)
-  }
+    setCurrText(e.target.value);
+    console.log("currText: ", e.target.value);
+  };
 
-  const submitPost =() => {
+  const updateStatus = (e) => {
+    setCurrStatus(e.target.value);
+    console.log("currStatus: ", e.target.value);
+  };
+
+  const submitPost = (e) => {
+    e.preventDefault();
     const newPost = {
-      id: (posts.length),
-      type:Type.currType,
-      title:currTitle,
-      category:[Category.MainCategories.Academics],
+      id: posts.length,
+      type: currType,
+      title: currTitle,
+      category: currCategories,
+      submission: currText,
       status: currStatus,
       author: user.username,
       icon: user.icon,
       date: new Date(),
-      upvotes:0,
-      downvotes:0,
-      upvoted:false,
-      downvoted:false,
-      comments:[]
-    }
-    posts.push(newPost)
+      upvotes: 1,
+      downvotes: 0,
+      upvoted: true,
+      downvoted: false,
+      comments: [],
+    };
+    posts.push(newPost);
+    history.push("/xchange/discussions");
   };
   return (
     <div className="home">
       <div id="content">
-<form>
-<fieldset class="form-group">
-    <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Type</legend>
-      <div class="col-sm-10">
-        <div class="custom-control custom-radio custom-control-inline">
-          <input onClick={updateType} value="Discussion" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"></input>
-          <label class="custom-control-label" for="customRadioInline1">Discussion</label>
-      </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input onClick={updateType} type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input"></input>
-        <label class="custom-control-label" for="customRadioInline2">Q&amp;A</label>
-      </div>
-      </div>
-    </div>
-  </fieldset>
-  <div class="form-group row">
-  <legend class="col-form-label col-sm-2 pt-0">Category</legend>
-    <div class="col-sm-10">
-      <div class="form-check form-check-inline">
-        <input onClick={updateCategory} value="Academics" class="form-check-input" type="checkbox" id="inlineCheckbox1" ></input>
-        <label class="form-check-label" for="inlineCheckbox1">Academics</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"></input>
-        <label class="form-check-label" for="inlineCheckbox2">Other</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" onChange={updateTitle}></input>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="exampleFormControlTextarea1" class="col-sm-2 col-form-label">Text</label>
-    <div class="col-sm-10">
-      <textarea onChange={updateText} class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-  </div>
+        <form>
+          <fieldset className="form-group">
+            <div className="row">
+              <legend className="col-form-label col-sm-2 pt-0">Type</legend>
+              <div className="col-sm-10">
+                <div className="custom-control custom-radio custom-control-inline">
+                  <input
+                    onClick={updateType}
+                    value={Type.Discussion}
+                    type="radio"
+                    id="customRadioInline1"
+                    name="customRadioInline1"
+                    className="custom-control-input"
+                  ></input>
+                  <label
+                    className="custom-control-label"
+                    htmlFor="customRadioInline1"
+                  >
+                    Discussion
+                  </label>
+                </div>
+                <div className="custom-control custom-radio custom-control-inline">
+                  <input
+                    onClick={updateType}
+                    value={Type.Question}
+                    type="radio"
+                    id="customRadioInline2"
+                    name="customRadioInline1"
+                    className="custom-control-input"
+                  ></input>
+                  <label
+                    className="custom-control-label"
+                    htmlFor="customRadioInline2"
+                  >
+                    Q&amp;A
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div className="form-group row">
+            <legend className="col-form-label col-sm-2 pt-0">Category</legend>
+            <div className="col-sm-10">
+              <div className="form-check form-check-inline">
+                <input
+                  onClick={updateCategory}
+                  value="Academics"
+                  className="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox1"
+                ></input>
+                <label className="form-check-label" htmlFor="inlineCheckbox1">
+                  Academics
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <input
+                  onClick={updateCategory}
+                  value="Other"
+                  className="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                ></input>
+                <label className="form-check-label" htmlFor="inlineCheckbox2">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="post-title" className="col-sm-2 col-form-label">
+              Title
+            </label>
+            <div className="col-sm-10">
+              <input
+                type="text"
+                className="form-control"
+                id="post-title"
+                onChange={updateTitle}
+                required
+              ></input>
+            </div>
+          </div>
+          <div className="form-group row">
+            <label
+              htmlFor="exampleFormControlTextarea1"
+              className="col-sm-2 col-form-label"
+            >
+              Text
+            </label>
+            <div className="col-sm-10">
+              <textarea
+                onChange={updateText}
+                className="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+          </div>
 
-  <div class="form-group row">
-      <legend class="col-form-label col-sm-2 pt-0">Status</legend>
-      <div class="col-sm-10">
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" id="customRadioInline3" name="customRadioInline3" class="custom-control-input"></input>
-          <label class="custom-control-label" for="customRadioInline3">by William</label>
+          <div className="form-group row">
+            <legend className="col-form-label col-sm-2 pt-0">Status</legend>
+            <div className="col-sm-10">
+              <div className="custom-control custom-radio custom-control-inline">
+                <input
+                  type="radio"
+                  onChange={updateStatus}
+                  id="customRadioInline3"
+                  name="customRadioInline3"
+                  className="custom-control-input"
+                  value={Status.Public}
+                ></input>
+                <label
+                  className="custom-control-label"
+                  htmlFor="customRadioInline3"
+                >
+                  by {user.name.split(" ")[0]}
+                </label>
+              </div>
+              <div className="custom-control custom-radio custom-control-inline">
+                <input
+                  type="radio"
+                  onChange={updateStatus}
+                  id="customRadioInline4"
+                  name="customRadioInline3"
+                  className="custom-control-input"
+                  value={Status.Anon}
+                ></input>
+                <label
+                  className="custom-control-label"
+                  htmlFor="customRadioInline4"
+                >
+                  by Anon
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <div className="col-sm-10">
+              <button className="btn btn-primary" onClick={submitPost}>
+                Submit Post
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio" id="customRadioInline4" name="customRadioInline3" class="custom-control-input"></input>
-        <label class="custom-control-label" for="customRadioInline4">by Anon</label>
-      </div>
-      </div>
-    </div>
-  
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary" onClick={submitPost}>Submit Post</button>
-    </div>
-  </div>
-</form>
-        
-      </div>
-      
     </div>
   );
 };

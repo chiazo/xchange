@@ -238,8 +238,9 @@ html {
 
 /* body */
 
-.contract h7 {
+.contract p {
   text-decoration: underline;
+  margin: 0;
 }
 
 body {

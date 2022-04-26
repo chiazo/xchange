@@ -81,8 +81,8 @@ const Exchange = () => {
           <h5> Your Favorite Sellers</h5>
           <div className="grid">
             <div className="d-flex justify-content-around">
-              {sellers.map(({ username, profile_pic }) => (
-                <div className="col-sm">
+              {sellers.map(({ username, profile_pic }, idx) => (
+                <div className="col-sm" key={idx + 3}>
                   <div className="item">
                     <div className="item">
                       <img alt="item-pic" src={profile_pic} />

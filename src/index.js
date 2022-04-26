@@ -70,9 +70,9 @@ const Index = () => {
       </BrowserRouter>
       <div className="contract">
         <h3>Contract Requirements</h3>
-        {contract.map(({ page, requirements }) => (
-          <div>
-            <h7>{page}:</h7>
+        {contract.map(({ page, requirements }, idx) => (
+          <div key={idx}>
+            <p>{page}:</p>
             <ul>
               {requirements.map((r, idx) => (
                 <li key={idx}>{r}</li>
