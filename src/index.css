@@ -299,6 +299,11 @@ h4 {
   background-color: rgb(238, 246, 254);
 }
 
+.discussion-end-block {
+  height: 100%;
+  min-height: 183px;
+}
+
 .preview.card {
   width: 346px;
   height: 100%;
