@@ -1,13 +1,15 @@
 import React from "react";
-import { homePosts, discussionPosts } from "./data/homePosts";
+import { homePosts } from "./data/homePosts";
 import { Link } from "react-router-dom";
 import Preview from "./Preview";
 
 const Discussion = ({ posts }) => {
+  const discussionPosts = [...posts.slice(2)];
+
   return (
     <div className="discussion">
       <div id="content">
-        <Link to="/add-post">
+        <Link to="/xchange/add-post">
           <button className="add-post-button">+</button>
         </Link>
         <div className="row">
@@ -27,6 +29,7 @@ const Discussion = ({ posts }) => {
         <div>
           <Preview posts={homePosts} allPosts={posts} />
           <Preview posts={discussionPosts} allPosts={posts} />
+          <div className="discussion-end-block"></div>
         </div>
       </div>
     </div>

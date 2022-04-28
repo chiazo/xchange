@@ -1,18 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { user } from "../data/user";
 
 const Header = () => (
   <header className="masthead">
     <div>
       <div className="row">
         <div className="col-9">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/xchange/" style={{ textDecoration: "none" }}>
             <h1 className="site-title">XChange</h1>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="/profile-page" style={{ textDecoration: "none" }}>
-            <button></button>
+          <Link to="/xchange/profile-page" style={{ textDecoration: "none" }}>
+            <img className="profile-pic" alt="profile pic" src={user.icon} />
           </Link>
         </div>
       </div>
