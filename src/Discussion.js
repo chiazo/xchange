@@ -29,6 +29,7 @@ const Discussion = ({ posts }) => {
         <div>
           <Preview posts={homePosts} allPosts={posts} />
           <Preview posts={discussionPosts} allPosts={posts} />
+          <div className="discussion-end-block"></div>
         </div>
       </div>
     </div>
