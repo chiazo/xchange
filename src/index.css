@@ -629,6 +629,7 @@ p {
   border-radius: 20px;
   min-width: 60px;
   border: none;
+  max-height:40px;
 }
 
 .add-post-options-category {
@@ -639,7 +640,10 @@ p {
   border-radius: 20px;
   min-width: 100px;
   border: none;
+  max-height:40px;
 }
+
+
 
 .dropdown {
   position: relative;
@@ -816,6 +820,14 @@ p {
 
 .contract {
   display: none;
+}
+
+.submit-post-btn {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 0px 20px;
+  box-shadow: 3px 4px 4px rgb(166 165 165);
 }
 
 
