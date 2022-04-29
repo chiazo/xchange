@@ -6,30 +6,30 @@ const Profile = () => {
   var edit_mode = false;
   const [d_interests, setd_interests] = useState(user.d_interests);
   const [m_interests, setm_interests] = useState(user.m_interests);
-  var will = true;
-  var anon = false;
+  let will = true;
+  let anon = false;
 
   const remove_dtag = (e) => {
     e.preventDefault();
-    var name = e.target.innerText.substring(2);
+    let name = e.target.innerText.substring(2);
     setd_interests(d_interests.filter((item) => item != name));
   };
 
   const remove_mtag = (e) => {
     e.preventDefault();
-    var name = e.target.innerText.substring(2);
+    let name = e.target.innerText.substring(2);
     setm_interests(m_interests.filter((item) => item != name));
   };
 
   const add_dtag = (e) => {
-    //e.preventDefault();
-    var new_tag = document.getElementById("add-dtag").value;
+    e.preventDefault();
+    let new_tag = document.getElementById("add-dtag").value;
     setd_interests([...d_interests, new_tag]);
   };
 
   const add_mtag = (e) => {
-    //e.preventDefault();
-    var new_tag = document.getElementById("add-mtag").value;
+    e.preventDefault();
+    let new_tag = document.getElementById("add-mtag").value;
     setm_interests([...m_interests, new_tag]);
   };
 

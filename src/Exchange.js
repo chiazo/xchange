@@ -1,7 +1,10 @@
 import React from "react";
 import { items1, items2 } from "./data/items.js";
 import { sellers } from "./data/sellers.js";
-const Exchange = () => {
+const Exchange = (e) => {
+  const coming_soon = () => {
+    alert("This feature is coming soon!");
+  };
   return (
     <div className="exchange">
       <div id="content">
@@ -11,6 +14,7 @@ const Exchange = () => {
             className="form-control"
             id="examplesearch"
             placeholder="Search"
+            onClick={coming_soon}
           ></input>
         </form>
         <div className="market-xpoints-filter-sort">
@@ -50,7 +54,7 @@ const Exchange = () => {
             {items1.map(({ title, price, picture }, idx) => (
               <div className="col-sm" key={idx}>
                 <div className="item">
-                  <a href="default.asp">
+                  <a onClick={coming_soon}>
                     <img alt="item-pic" src={picture} />
                     <p id="price">${price}</p>
                   </a>
@@ -66,7 +70,7 @@ const Exchange = () => {
               <div className="col-sm" key={idx + 10}>
                 <div className="item">
                   <div className="item">
-                    <a href="default.asp">
+                    <a onClick={coming_soon}>
                       <img alt="item-pic" src={picture} />
                       <p id="price">${price}</p>
                     </a>
@@ -85,7 +89,11 @@ const Exchange = () => {
                 <div className="col-sm">
                   <div className="item">
                     <div className="item">
-                      <img alt="item-pic" src={profile_pic} />
+                      <img
+                        alt="item-pic"
+                        onClick={coming_soon}
+                        src={profile_pic}
+                      />
                     </div>
                   </div>
                   <div className="d-flex justify-content-around">
