@@ -103,7 +103,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
             <div className="form-group row radio-type">
               <legend className="col-form-label col-sm-3 pt-0 add-post-options cat">Category</legend>
               <div className="col-sm-8">
-                <div className="form-check form-check-inline">
+                <div className="form-check form-check-inline col-sm-2">
                   <input
                     onClick={updateCategory}
                     value="Academics"
@@ -115,18 +115,16 @@ export const AddPost = ({ posts, setAllPosts }) => {
                     Academics
                   </label>
                 </div>
-                <div className="form-check form-check-inline">
-                  <input
-                    onClick={updateCategory}
-                    value="Other"
-                    className="form-check-input"
-                    type="checkbox"
-                    id="inlineCheckbox2"
-                  ></input>
-                  <label className="form-check-label" htmlFor="inlineCheckbox2">
-                    Other
-                  </label>
+                <div class="dropdown show">
+                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown link
+                  </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
                 </div>
+              </div>
               </div>
             </div>
             <div className="form-group row">
