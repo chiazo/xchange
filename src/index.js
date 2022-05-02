@@ -33,6 +33,7 @@ const Index = () => {
         "Allow parent comments only",
         "Allow upvoting and downvoting",
         "Connect voting across pages",
+        "Allow only three interests at once",
       ],
     },
     {
