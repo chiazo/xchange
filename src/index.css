@@ -691,7 +691,6 @@ p {
   margin: auto;
 }
 
-
 .edit-box {
   background-color: white;
   border-radius: 100%;
@@ -699,11 +698,9 @@ p {
   width: 30px;
   height: 30px;
   position: absolute;
-  bottom: 0px;
-  right: 15px;
-  margin: auto;
+  bottom: 20px;
+  right: 10px;
   box-shadow: 3px 5px 5px #b3b2b2;
-}
 
 .edit-box2 {
   background-color: white;
@@ -734,15 +731,16 @@ p {
   color: #7D7D7D;
 }
 
-#profile {
+.profile {
   background: rgb(175, 212, 255, 0.1);
   border: 1px solid black;
   border-radius: 10px;
   margin-top: 10px;
   box-shadow: 3px 5px 5px #b3b2b2;
+  position: relative;
 }
 
-#profile h1 {
+.profile h1 {
   font-size: 18px;
   text-align: left;
   margin-left: 10px;
@@ -750,21 +748,10 @@ p {
   padding-top: 6px;
 }
 
-.about-me p {
-  margin-top: 5px;
-  margin-left: 10px;
-  text-align: left;
-  font-weight: 0px;
-  font-size: 12px;
-  line-height: 0px;
-}
-
-
 .interest {
   position: relative;
   display: flex;
 }
-
 
 .edit-box3 {
   background-color: white;
@@ -779,10 +766,10 @@ p {
   box-shadow: 3px 3px 5px #c2bfbf;
 }
 
+
 .interest p {
   margin-left: 15px;
-  font-weight: 0px;
-  font-size: 10px;
+  font-size: 11px;
   border: 1px solid black;
   padding-left: 15px;
   padding-right: 15px;
@@ -790,7 +777,7 @@ p {
   padding-bottom: 3px;
   border-radius: 5px;
   box-shadow: 3px 3px 5px #c2bfbf;
-
+  max-width: max-content;
 }
 
 #profile-space {
@@ -807,6 +794,54 @@ p {
   border: none;
   box-shadow: none;
 }
+
+#about-me {
+  display: contents;
+  line-height: 0px;
+}
+#about-me p {
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  font-size: 11px;
+}
+
+#profile-edit {
+  bottom: 0;
+}
+.edit-box:hover + .add-interest { 
+  display: block;
+}
+
+input:hover {
+  display: block;
+}
+.add-interest {
+  width: 70px;
+  height: 27px;
+  border: 1px solid rgb(223, 216, 216);
+  margin-left: 25px;
+  font-size: small;
+  font-weight: 500;
+
+}
+
+#status-will-a {
+  background-color: rgba(175, 212, 255, 0.6);
+}
+
+#status-will {
+  background-color: none;
+}
+
+#status-anon-a {
+  background-color: rgba(175, 212, 255, 0.6);
+}
+
+#status-anon {
+  background-color: none;
+}
+
 
 #privacy-edit {
   position: absolute;
@@ -850,7 +885,7 @@ p {
     top: 440px;
   }
 }
-
+  
 .radio-type label:hover{
   background-color: rgba(209, 230, 255, 0.6);
 }
