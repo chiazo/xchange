@@ -1,30 +1,34 @@
-import React, { useState, useEffect } from "react";
-import { propTypes } from "react-bootstrap/esm/Image";
+import React, { useState } from "react";
 import { user } from "./data/user.js";
+import { Modal } from "react-bootstrap";
 
 const Profile = () => {
-  var edit_mode = false;
   const [d_interests, setd_interests] = useState(user.d_interests);
   const [m_interests, setm_interests] = useState(user.m_interests);
-  var will = true;
-  var anon = false;
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  let will = true;
+  let anon = false;
 
   const remove_dtag = (e) => {
     e.preventDefault();
-    var name = e.target.innerText.substring(2);
-    setd_interests(d_interests.filter((item) => item != name));
+    let name = e.target.innerText.substring(2);
+    setd_interests(d_interests.filter((item) => item !== name));
   };
 
   const remove_mtag = (e) => {
     e.preventDefault();
-    var name = e.target.innerText.substring(2);
-    setm_interests(m_interests.filter((item) => item != name));
+    let name = e.target.innerText.substring(2);
+    setm_interests(m_interests.filter((item) => item !== name));
   };
 
   const add_dtag = (e) => {
     e.preventDefault();
     if (d_interests.length < 3) {
-      var new_tag = document.getElementById("add-dtag").value;
+      let new_tag = document.getElementById("add-dtag").value;
       setd_interests([...d_interests, new_tag]);
     }
   };
@@ -32,7 +36,7 @@ const Profile = () => {
   const add_mtag = (e) => {
     e.preventDefault();
     if (m_interests.length < 3) {
-      var new_tag = document.getElementById("add-mtag").value;
+      let new_tag = document.getElementById("add-mtag").value;
       setm_interests([...m_interests, new_tag]);
     }
   };
@@ -58,10 +62,18 @@ const Profile = () => {
   return (
     <div className="home">
       <div id="content">
+        <Modal show={show} onHide={handleClose} className="coming-soon">
+          <Modal.Header closeButton>
+            <Modal.Title>Coming Soon:</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>This feature hasn't been implemented!</Modal.Body>
+        </Modal>
         <div className="profile-edit">
           <img id="profile-pic" alt="profile" src={user.icon} />
           <div id="profile-edit" className="edit-box">
             <img
+              onClick={handleShow}
               alt="edit"
               id="edit-icon"
               src="https://img.icons8.com/ios/50/000000/edit--v1.png"
@@ -78,6 +90,7 @@ const Profile = () => {
           </div>
           <div className="edit-box">
             <img
+              onClick={handleShow}
               alt="edit"
               id="edit-icon"
               src="https://img.icons8.com/ios/50/000000/edit--v1.png"
@@ -89,14 +102,14 @@ const Profile = () => {
           <div className="interest">
             {d_interests.map((value, idx) => {
               return (
-                <a onClick={remove_dtag} key={idx} href="#">
+                <a onClick={remove_dtag} key={idx} href="#void">
                   <p>x {value}</p>
                 </a>
               );
             })}
 
             <div className="edit-box">
-              <a className="description" onClick={add_dtag} href="#">
+              <a className="description" onClick={add_dtag} href="#void">
                 <img
                   alt="edit"
                   id="edit-icon"
@@ -120,7 +133,7 @@ const Profile = () => {
           <div className="interest">
             {m_interests.map((value, idx) => {
               return (
-                <a key={idx} onClick={remove_mtag} href="#">
+                <a key={idx} onClick={remove_mtag} href="#void">
                   <p>x {value}</p>
                 </a>
               );
@@ -147,10 +160,10 @@ const Profile = () => {
           <h1>Privacy Settings</h1>
           <div className="interest">
             <p id="field">Status</p>
-            <a href="#" onClick={toggle_status_will}>
+            <a href="#void" onClick={toggle_status_will}>
               <p id="status-will-a">By William</p>
             </a>
-            <a href="#" onClick={toggle_status_anon}>
+            <a href="#void" onClick={toggle_status_anon}>
               <p id="status-anon">By Anon</p>
             </a>
           </div>
@@ -160,6 +173,7 @@ const Profile = () => {
           </div>
           <div className="edit-box">
             <img
+              onClick={handleShow}
               alt="edit"
               id="edit-icon"
               src="https://img.icons8.com/ios/50/000000/edit--v1.png"
