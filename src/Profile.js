@@ -8,7 +8,20 @@ const Profile = () => {
   const [m_interests, setm_interests] = useState(user.m_interests);
   var will = true;
   var anon = false;
-
+  const toggle_edit_disc = () => {
+    try {
+      document.getElementById("add-dtag-hidden").id = "add-dtag";
+    } catch {
+      document.getElementById("add-dtag").id = "add-dtag-hidden";
+    }
+  };
+  const toggle_edit_mark = () => {
+    try {
+      document.getElementById("add-mtag-hidden").id = "add-mtag";
+    } catch {
+      document.getElementById("add-mtag").id = "add-mtag-hidden";
+    }
+  };
   const remove_dtag = (e) => {
     e.preventDefault();
     var name = e.target.innerText.substring(2);
@@ -27,6 +40,7 @@ const Profile = () => {
       var new_tag = document.getElementById("add-dtag").value;
       setd_interests([...d_interests, new_tag]);
     }
+    document.getElementById("add-dtag").id = "add-dtag-hidden";
   };
 
   const add_mtag = (e) => {
@@ -35,6 +49,7 @@ const Profile = () => {
       var new_tag = document.getElementById("add-mtag").value;
       setm_interests([...m_interests, new_tag]);
     }
+    document.getElementById("add-mtag").id = "add-mtag-hidden";
   };
 
   const toggle_status_will = () => {
@@ -96,10 +111,10 @@ const Profile = () => {
             })}
 
             <div className="edit-box">
-              <a className="description" onClick={add_dtag} href="#">
+              <a onClick={toggle_edit_disc} href="#">
                 <img
                   alt="edit"
-                  id="edit-icon"
+                  id="edit-icon-disc"
                   src="https://img.icons8.com/ios/50/000000/edit--v1.png"
                 />
               </a>
@@ -107,7 +122,7 @@ const Profile = () => {
             <form onSubmit={add_dtag}>
               <input
                 type="text"
-                id="add-dtag"
+                id="add-dtag-hidden"
                 className="add-interest"
                 placeholder="seniors"
               ></input>
@@ -125,18 +140,19 @@ const Profile = () => {
                 </a>
               );
             })}
-
-            <div className="edit-box">
-              <img
-                alt="edit"
-                id="edit-icon"
-                src="https://img.icons8.com/ios/50/000000/edit--v1.png"
-              />
-            </div>
+            <a onClick={toggle_edit_mark} href="#">
+              <div className="edit-box">
+                <img
+                  alt="edit"
+                  id="edit-icon-mark"
+                  src="https://img.icons8.com/ios/50/000000/edit--v1.png"
+                />
+              </div>
+            </a>
             <form onSubmit={add_mtag}>
               <input
                 type="text"
-                id="add-mtag"
+                id="add-mtag-hidden"
                 className="add-interest"
                 placeholder="shoes"
               ></input>

@@ -685,6 +685,18 @@ p {
 
 }
 
+#edit-icon-disc {
+  width: 15px;
+  height: 15px;
+  margin: auto;
+}
+
+#edit-icon-mark {
+  width: 15px;
+  height: 15px;
+  margin: auto;
+
+}
 #edit-icon {
   width: 15px;
   height: 15px;
@@ -898,6 +910,12 @@ input:hover {
   display:none;
 }
 
+#add-dtag-hidden {
+  display: none;
+}
+#add-mtag-hidden {
+  display: none;
+}
 #add-dtag {
   display: block;
 }
