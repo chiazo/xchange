@@ -69,7 +69,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
     history.push("/xchange/discussions");
   };
   return (
-    <div className="home add-post">
+    <div className="add-post">
       <div id="content">
           <form>
           <div className="form-container">
