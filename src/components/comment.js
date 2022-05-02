@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Modal } from "react-bootstrap";
 
 export const Comment = ({
   id,
@@ -11,11 +11,14 @@ export const Comment = ({
   changeCommentVoteStatus,
   allComments,
 }) => {
+  const [show, setShow] = useState(false);
   const [currDownvotes, setCurrDownvotes] = useState(allComments[id].downvotes);
   const [upvoted, setUpvoted] = useState(allComments[id].upvoted);
   const [downvoted, setDownvoted] = useState(allComments[id].downvoted);
   const [currUpvotes, setCurrUpvotes] = useState(allComments[id].upvotes);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const increaseUpvotes = () => {
     const result = changeCommentVoteStatus(parentId, id, "upvotes");
     setCurrUpvotes(result.upvotes);
@@ -34,6 +37,13 @@ export const Comment = ({
 
   return (
     <Card className="comment" key={id}>
+      <Modal show={show} onHide={handleClose} className="coming-soon">
+        <Modal.Header closeButton>
+          <Modal.Title>Coming Soon:</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>This feature hasn't been implemented!</Modal.Body>
+      </Modal>
       <div className="row">
         <div className="votes col-3">
           <div className="comment-voting">
@@ -86,7 +96,9 @@ export const Comment = ({
                 </div>
               </div>
               <div className="col-2">
-                <button className="comment-settings">...</button>
+                <button className="comment-settings" onClick={handleShow}>
+                  ...
+                </button>
               </div>
             </div>
             <div className="row">
@@ -97,6 +109,7 @@ export const Comment = ({
                 <button className="comment-reply">
                   {" "}
                   <img
+                    onClick={handleShow}
                     className="voting-arrow"
                     alt="up"
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABI0lEQVRIie3VTSsFURgH8N8tJUpW91pZ2UgoG6XsKBvfxwewsvAFyFewsEU2RFiIDWVHWbCQt1LeFvfcmqaZa+5cjoX7r2cxp3nmd87pnIZOOqGGQ2zFRKs4xWeoP0GjwFnor8N56I/CldRzDdsYzXn/ETe4wwWOsI+TdiZRw5nslX5Xl1jEQBn4uCSarGcsoTc23KhzTBSF29nqrHrATFG82YkuUy+YzILSp7qx8ryT3Yf+MMEhDGMK02E8K9cYw33uclN41rbnpRvz2MB7Rt9qEbQZXiTj2E31vWGkFbzsT6KCBXwketdagamv/ACbrTYGPHnHe0p8o3TWE/hcTHgQTwFejgnDSoB3YsOzAb6KDVcD/NoY6IoE32JP/Xp18k/yBX9IqttW35coAAAAAElFTkSuQmCC"
