@@ -24,7 +24,11 @@ const Index = () => {
     },
     {
       page: "Profile Page",
-      requirements: ["Add or remove interests", "Ability to edit status"],
+      requirements: [
+        "Add or remove interests",
+        "Ability to edit status",
+        "Allow only three interests at once",
+      ],
     },
     {
       page: "Discussions Page",
@@ -33,7 +37,6 @@ const Index = () => {
         "Allow parent comments only",
         "Allow upvoting and downvoting",
         "Connect voting across pages",
-        "Allow only three interests at once",
       ],
     },
     {

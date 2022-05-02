@@ -59,13 +59,7 @@ const Profile = () => {
     <div className="home">
       <div id="content">
         <div className="profile-edit">
-          <img
-            id="profile-pic"
-            alt="profile"
-            src={
-              "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
-            }
-          />
+          <img id="profile-pic" alt="profile" src={user.icon} />
           <div id="profile-edit" className="edit-box">
             <img
               alt="edit"
