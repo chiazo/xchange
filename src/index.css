@@ -894,7 +894,7 @@ input:hover {
 .radio-type input[type="radio"]:focus +label {
   border:2px dashed #444;
 }
-input {
+.add-post input {
   display:none;
 }
 
