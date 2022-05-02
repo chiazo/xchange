@@ -111,7 +111,7 @@ const Profile = () => {
             })}
 
             <div className="edit-box">
-              <a onClick={toggle_edit_disc} href="#">
+              <a onClick={toggle_edit_disc} href="#void">
                 <img
                   alt="edit"
                   id="edit-icon-disc"
@@ -140,7 +140,7 @@ const Profile = () => {
                 </a>
               );
             })}
-            <a onClick={toggle_edit_mark} href="#">
+            <a onClick={toggle_edit_mark} href="#void">
               <div className="edit-box">
                 <img
                   alt="edit"
