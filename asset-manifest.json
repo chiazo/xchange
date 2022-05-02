@@ -1,23 +1,15 @@
 {
-  "files": {
-    "main.css": "/xchange/static/css/main.c3cb5fa2.chunk.css",
-    "main.js": "/xchange/static/js/main.d58d348d.chunk.js",
-    "main.js.map": "/xchange/static/js/main.d58d348d.chunk.js.map",
-    "runtime-main.js": "/xchange/static/js/runtime-main.c547f120.js",
-    "runtime-main.js.map": "/xchange/static/js/runtime-main.c547f120.js.map",
-    "static/css/2.d6008dad.chunk.css": "/xchange/static/css/2.d6008dad.chunk.css",
-    "static/js/2.c86780d2.chunk.js": "/xchange/static/js/2.c86780d2.chunk.js",
-    "static/js/2.c86780d2.chunk.js.map": "/xchange/static/js/2.c86780d2.chunk.js.map",
-    "index.html": "/xchange/index.html",
-    "static/css/2.d6008dad.chunk.css.map": "/xchange/static/css/2.d6008dad.chunk.css.map",
-    "static/css/main.c3cb5fa2.chunk.css.map": "/xchange/static/css/main.c3cb5fa2.chunk.css.map",
-    "static/js/2.c86780d2.chunk.js.LICENSE.txt": "/xchange/static/js/2.c86780d2.chunk.js.LICENSE.txt"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.c547f120.js",
-    "static/css/2.d6008dad.chunk.css",
-    "static/js/2.c86780d2.chunk.js",
-    "static/css/main.c3cb5fa2.chunk.css",
-    "static/js/main.d58d348d.chunk.js"
-  ]
+  "main.css": "/xchange/static/css/main.288fa157.chunk.css",
+  "main.js": "/xchange/static/js/main.aedf487d.chunk.js",
+  "main.js.map": "/xchange/static/js/main.aedf487d.chunk.js.map",
+  "static/css/1.765c3b56.chunk.css": "/xchange/static/css/1.765c3b56.chunk.css",
+  "static/js/1.8fd13db9.chunk.js": "/xchange/static/js/1.8fd13db9.chunk.js",
+  "static/js/1.8fd13db9.chunk.js.map": "/xchange/static/js/1.8fd13db9.chunk.js.map",
+  "runtime~main.js": "/xchange/static/js/runtime~main.6533b053.js",
+  "runtime~main.js.map": "/xchange/static/js/runtime~main.6533b053.js.map",
+  "static/css/main.288fa157.chunk.css.map": "/xchange/static/css/main.288fa157.chunk.css.map",
+  "static/css/1.765c3b56.chunk.css.map": "/xchange/static/css/1.765c3b56.chunk.css.map",
+  "index.html": "/xchange/index.html",
+  "precache-manifest.91097d4f7ed41ed0c52ad9efdc9fd91d.js": "/xchange/precache-manifest.91097d4f7ed41ed0c52ad9efdc9fd91d.js",
+  "service-worker.js": "/xchange/service-worker.js"
 }
