@@ -22,15 +22,19 @@ const Profile = () => {
   };
 
   const add_dtag = (e) => {
-    //e.preventDefault();
-    var new_tag = document.getElementById("add-dtag").value;
-    setd_interests([...d_interests, new_tag]);
+    if (d_interests.length < 3) {
+      //e.preventDefault();
+      var new_tag = document.getElementById("add-dtag").value;
+      setd_interests([...d_interests, new_tag]);
+    }
   };
 
   const add_mtag = (e) => {
     //e.preventDefault();
-    var new_tag = document.getElementById("add-mtag").value;
-    setm_interests([...m_interests, new_tag]);
+    if (m_interests.length < 3) {
+      var new_tag = document.getElementById("add-mtag").value;
+      setm_interests([...m_interests, new_tag]);
+    }
   };
 
   const toggle_status_will = () => {
