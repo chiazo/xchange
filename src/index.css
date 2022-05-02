@@ -701,6 +701,7 @@ p {
   bottom: 20px;
   right: 10px;
   box-shadow: 3px 5px 5px #b3b2b2;
+}
 
 .edit-box2 {
   background-color: white;
@@ -893,7 +894,7 @@ input:hover {
 .radio-type input[type="radio"]:focus +label {
   border:2px dashed #444;
 }
-input {
+add-post input {
   display:none;
 }
 

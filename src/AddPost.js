@@ -57,7 +57,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
     history.push("/xchange/discussions");
   };
   return (
-    <div className="home">
+    <div className="home add-post">
       <div id="content">
           <form>
           <div className="form-container">
@@ -115,17 +115,15 @@ export const AddPost = ({ posts, setAllPosts }) => {
                     Academics
                   </label>
                 </div>
-                <div className="form-check form-check-inline">
-                  <input
-                    onClick={updateCategory}
-                    value="Other"
-                    className="form-check-input"
-                    type="checkbox"
-                    id="inlineCheckbox2"
-                  ></input>
-                  <label className="form-check-label" htmlFor="inlineCheckbox2">
-                    Other
-                  </label>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#void">Action</a>
+                    <a class="dropdown-item" href="#void">Another action</a>
+                    <a class="dropdown-item" href="#void">Something else here</a>
+                  </div>
                 </div>
               </div>
             </div>
