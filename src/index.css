@@ -885,6 +885,9 @@ input:hover {
     left: 300px;
     top: 440px;
   }
+  .modal-open .modal {
+    left:0;
+  }
 }
   
 .radio-type label:hover{
@@ -943,3 +946,4 @@ input:hover {
   padding-left:15px;
   padding-right:15px;
 }
+

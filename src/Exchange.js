@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { items1, items2 } from "./data/items.js";
 import { sellers } from "./data/sellers.js";
+import { Modal, Button } from "react-bootstrap";
 const Exchange = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div className="exchange">
       <div id="content">
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        </Modal>
         <form>
           <input
+            onClick={handleShow}
             type="text"
             className="form-control"
             id="examplesearch"
