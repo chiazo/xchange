@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { items1, items2 } from "./data/items.js";
 import { sellers } from "./data/sellers.js";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+
 const Exchange = () => {
   const [show, setShow] = useState(false);
 
@@ -10,8 +11,12 @@ const Exchange = () => {
   return (
     <div className="exchange">
       <div id="content">
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal show={show} onHide={handleClose} className="coming-soon">
+          <Modal.Header closeButton>
+            <Modal.Title>Coming Soon:</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>This feature hasn't been implemented!</Modal.Body>
         </Modal>
         <form>
           <input
@@ -31,10 +36,18 @@ const Exchange = () => {
                   <div className="dropdown">
                     <button className="dropbtn">Filter</button>
                     <div className="dropdown-content">
-                      <a href="#void">Clothing</a>
-                      <a href="#void">School</a>
-                      <a href="#void">Home</a>
-                      <a href="#void">Service</a>
+                      <a href="#void" onClick={handleShow}>
+                        Clothing
+                      </a>
+                      <a href="#void" onClick={handleShow}>
+                        School
+                      </a>
+                      <a href="#void" onClick={handleShow}>
+                        Home
+                      </a>
+                      <a href="#void" onClick={handleShow}>
+                        Service
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -42,10 +55,18 @@ const Exchange = () => {
                   <div className="dropdown">
                     <button className="dropbtn">Sort</button>
                     <div className="dropdown-content">
-                      <a href="#void">Lowest Price</a>
-                      <a href="#void">Highest Price</a>
-                      <a href="#void">Most Recent</a>
-                      <a href="#void">Most Popular</a>
+                      <a href="#void" onClick={handleShow}>
+                        Lowest Price
+                      </a>
+                      <a href="#void" onClick={handleShow}>
+                        Highest Price
+                      </a>
+                      <a href="#void" onClick={handleShow}>
+                        Most Recent
+                      </a>
+                      <a href="#void" onClick={handleShow}>
+                        Most Popular
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -59,7 +80,7 @@ const Exchange = () => {
             {items1.map(({ title, price, picture }, idx) => (
               <div className="col-sm" key={idx}>
                 <div className="item">
-                  <a href="default.asp">
+                  <a href="#void" onClick={handleShow}>
                     <img alt="item-pic" src={picture} />
                     <p id="price">${price}</p>
                   </a>
@@ -75,7 +96,7 @@ const Exchange = () => {
               <div className="col-sm" key={idx + 10}>
                 <div className="item">
                   <div className="item">
-                    <a href="default.asp">
+                    <a href="#void" onClick={handleShow}>
                       <img alt="item-pic" src={picture} />
                       <p id="price">${price}</p>
                     </a>
@@ -93,9 +114,9 @@ const Exchange = () => {
               {sellers.map(({ username, profile_pic }, idx) => (
                 <div className="col-sm" key={idx + 3}>
                   <div className="item">
-                    <div className="item">
+                    <a href="#void" className="item" onClick={handleShow}>
                       <img alt="item-pic" src={profile_pic} />
-                    </div>
+                    </a>
                   </div>
                   <div className="d-flex justify-content-around">
                     <p>{username}</p>
