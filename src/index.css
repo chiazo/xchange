@@ -932,8 +932,76 @@ add-post input {
   display: none;
 }
 
+#inlineCheckbox1 {
+  display: none;
+}
+
 .form-container {
   padding:10px;
   padding-left:15px;
   padding-right:15px;
 }
+
+#other-btn-select {
+  background-color: white;
+  border:none;
+  border-radius: 5px;
+}
+
+#menu {
+  padding-left:20px;
+  padding-bottom:9px;
+}
+
+.category-option {
+  border: 0px;
+}
+
+#cat-drop {
+  max-width: 60px;
+}
+
+.category-option:hover{
+  background-color: rgba(209, 230, 255, 0.6);
+}
+
+.category-option:focus{
+  background-color: rgba(209, 230, 255, 0.6);
+}
+
+#cat-drop-down, #cat-drop-down2 {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 110px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-size: 13px;
+  margin-left: -30px;
+}
+
+.wrap-check{
+  white-space: nowrap;
+}
+
+.chosen {
+  background-color: rgba(185, 218, 255, 0.6);
+}
+
+.radio-type .back-color{
+  background-color: rgba(185, 218, 255, 0.6);
+  min-width: 80px;
+}
+
+/* 
+.dropdown-content .custom-radio{
+  
+  position: relative;
+  background-color: white;
+  min-width:60px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-size: 13px;
+  border-radius:5px;
+} */
+
