@@ -22,19 +22,23 @@ const Profile = () => {
   };
 
   const add_dtag = (e) => {
-    //e.preventDefault();
-    var new_tag = document.getElementById("add-dtag").value;
-    setd_interests([...d_interests, new_tag]);
+    e.preventDefault();
+    if (d_interests.length < 3) {
+      var new_tag = document.getElementById("add-dtag").value;
+      setd_interests([...d_interests, new_tag]);
+    }
   };
 
   const add_mtag = (e) => {
-    //e.preventDefault();
-    var new_tag = document.getElementById("add-mtag").value;
-    setm_interests([...m_interests, new_tag]);
+    e.preventDefault();
+    if (m_interests.length < 3) {
+      var new_tag = document.getElementById("add-mtag").value;
+      setm_interests([...m_interests, new_tag]);
+    }
   };
 
   const toggle_status_will = () => {
-    if (will != true) {
+    if (will !== true) {
       document.getElementById("status-will").id = "status-will-a";
       document.getElementById("status-anon-a").id = "status-anon";
       will = true;
@@ -43,7 +47,7 @@ const Profile = () => {
   };
 
   const toggle_status_anon = () => {
-    if (anon != true) {
+    if (anon !== true) {
       document.getElementById("status-anon").id = "status-anon-a";
       document.getElementById("status-will-a").id = "status-will";
       anon = true;

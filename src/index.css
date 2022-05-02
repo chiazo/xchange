@@ -772,13 +772,14 @@ p {
   margin-left: 15px;
   font-size: 11px;
   border: 1px solid black;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 6px;
+  padding-right: 6px;
   padding-top: 5px;
   padding-bottom: 3px;
   border-radius: 5px;
   box-shadow: 3px 3px 5px #c2bfbf;
   max-width: max-content;
+  white-space: nowrap;
 }
 
 #profile-space {
@@ -824,7 +825,6 @@ input:hover {
   margin-left: 25px;
   font-size: small;
   font-weight: 500;
-
 }
 
 #status-will-a {
@@ -898,6 +898,12 @@ input {
   display:none;
 }
 
+#add-dtag {
+  display: block;
+}
+#add-mtag {
+  display: block;
+}
 .radio-type input[type="radio"]:checked + label {
   background-color: rgba(185, 218, 255, 0.6);
   border: 2px solid #444;
