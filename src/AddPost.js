@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { user } from "./data/user";
+import { user, anon_icon } from "./data/user";
 import { Status, Type, Category } from "./models/post";
 import { useHistory } from "react-router-dom";
 
 export const AddPost = ({ posts, setAllPosts }) => {
+  let currStatus = Status.Public;
   const history = useHistory();
   const [currType, setCurrType] = useState(Type.Discussion);
   const [currCategories, setCurrCategories] = useState([
@@ -11,7 +12,6 @@ export const AddPost = ({ posts, setAllPosts }) => {
   ]);
   const [currTitle, setCurrTitle] = useState("");
   const [currText, setCurrText] = useState("");
-  const [currStatus, setCurrStatus] = useState("");
 
   const updateType = (e) => {
     setCurrType(e.target.value);
@@ -35,7 +35,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
   };
 
   const updateStatus = (e) => {
-    setCurrStatus(e.target.value);
+    currStatus = Number(e.target.value);
   };
 
   const submitPost = () => {
@@ -45,8 +45,8 @@ export const AddPost = ({ posts, setAllPosts }) => {
       title: currTitle,
       category: currCategories,
       submission: currText,
-      status: currStatus,
       author: user.username,
+      status: currStatus,
       icon: user.icon,
       date: new Date(),
       upvotes: 1,
@@ -55,13 +55,17 @@ export const AddPost = ({ posts, setAllPosts }) => {
       downvoted: false,
       comments: [],
     };
+    if (newPost.status !== Status.Public) {
+      newPost.author = `AnonUser${Math.floor(Math.random() * 1000) + 1}`;
+      newPost.icon = anon_icon;
+    }
     setAllPosts([...posts, newPost]);
     history.push("/xchange/discussions");
   };
   return (
     <div className="add-post">
       <div id="content">
-        <form>
+        <form onSubmit={submitPost}>
           <div className="form-container">
             <fieldset className="">
               <div className="form-group row radio-type">
@@ -250,7 +254,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
 
             <div className="form-group row">
               <div className="col-sm-10">
-                <button className="submit-post-btn" onClick={submitPost}>
+                <button className="submit-post-btn" type="submit">
                   Submit Post
                 </button>
               </div>

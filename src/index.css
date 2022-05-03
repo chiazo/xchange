@@ -841,12 +841,8 @@ input:hover {
   background-color: none;
 }
 
-#status-anon-a {
+#highlighted-status-btn {
   background-color: rgba(175, 212, 255, 0.6);
-}
-
-#status-anon {
-  background-color: none;
 }
 
 #privacy-edit {
