@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Card, Modal } from "react-bootstrap";
 import { useParams, useLocation } from "react-router-dom";
 
+import { Status } from "./models/post";
 import Comment from "./components/comment";
-import { user } from "./data/user";
+import { user, anon_icon } from "./data/user";
 
 const DiscussionPost = ({ posts }) => {
   const { id } = useParams();
@@ -30,8 +31,11 @@ const DiscussionPost = ({ posts }) => {
     const newComment = {
       submission: currComment,
       status: user.status,
-      author: user.username,
-      icon: user.icon,
+      author:
+        user.status === Status.Public
+          ? user.username
+          : `AnonUser${Math.floor(Math.random() * 1000) + 1}`,
+      icon: user.status === Status.Public ? user.icon : anon_icon,
       date: new Date("2022-03-04T03:24:00"),
       upvotes: 1,
       downvotes: 0,

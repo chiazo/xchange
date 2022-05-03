@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { user } from "./data/user.js";
 import { Modal } from "react-bootstrap";
+import { Status } from "./models/post";
 
 const Profile = () => {
   const [d_interests, setd_interests] = useState(user.d_interests);
   const [m_interests, setm_interests] = useState(user.m_interests);
+  const [status, setStatus] = useState(user.status);
   const [warning, setWarning] = useState("");
   const [show, setShow] = useState(false);
-
-  var will = true;
-  var anon = false;
 
   const handleClose = () => setShow(false);
 
@@ -71,21 +70,17 @@ const Profile = () => {
       "edit-box-mark";
   };
 
-  const toggle_status_will = () => {
-    if (will !== true) {
-      document.getElementById("status-will").id = "status-will-a";
-      document.getElementById("status-anon-a").id = "status-anon";
-      will = true;
-      anon = false;
+  const toggle_visibility = () => {
+    if (status !== Status.Public) {
+      setStatus(Status.Public);
+      user.status = Status.Public;
     }
   };
 
-  const toggle_status_anon = () => {
-    if (anon !== true) {
-      document.getElementById("status-anon").id = "status-anon-a";
-      document.getElementById("status-will-a").id = "status-will";
-      anon = true;
-      will = false;
+  const toggle_anonymity = () => {
+    if (status !== Status.Anon) {
+      setStatus(Status.Anon);
+      user.status = Status.Anon;
     }
   };
 
@@ -195,11 +190,15 @@ const Profile = () => {
           <h1>Privacy Settings</h1>
           <div className="interest">
             <p id="field">Status</p>
-            <a href="#void" onClick={toggle_status_will}>
-              <p id="status-will-a">By William</p>
+            <a href="#void" onClick={toggle_visibility}>
+              <p id={status === Status.Public ? "highlighted-status-btn" : ""}>
+                By William
+              </p>
             </a>
-            <a href="#void" onClick={toggle_status_anon}>
-              <p id="status-anon">By Anon</p>
+            <a href="#void" onClick={toggle_anonymity}>
+              <p id={status === Status.Anon ? "highlighted-status-btn" : ""}>
+                By Anon
+              </p>
             </a>
           </div>
           <div className="interest">
