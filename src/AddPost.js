@@ -21,14 +21,6 @@ export const AddPost = ({ posts, setAllPosts }) => {
     setCurrCategories(e.target.value);
   };
 
-  // const updateCategory = (e) => {
-  //   const filteredCategories = currCategories.filter(
-  //     (x) => x !== e.target.value
-  //   );
-  //   setCurrCategories([...filteredCategories, e.target.value]);
-  //   console.log("this is the curr categ", currCategories);
-  // };
-
   const updateTitle = (e) => {
     setCurrTitle(e.target.value);
   };
