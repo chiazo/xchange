@@ -6,24 +6,22 @@ const Profile = () => {
   const [d_interests, setd_interests] = useState(user.d_interests);
   const [m_interests, setm_interests] = useState(user.m_interests);
   const [show, setShow] = useState(false);
+
   var will = true;
   var anon = false;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const toggle_edit_disc = () => {
-    try {
-      document.getElementById("add-dtag-hidden").id = "add-dtag";
-    } catch {
-      document.getElementById("add-dtag").id = "add-dtag-hidden";
-    }
+
+  const toggle_edit_disc = (e) => {
+    document.getElementById("add-dtag-hidden").id = "add-dtag";
+    document.getElementsByClassName("edit-box-disc")[0].className =
+      "edit-box-disc-hidden";
   };
   const toggle_edit_mark = () => {
-    try {
-      document.getElementById("add-mtag-hidden").id = "add-mtag";
-    } catch {
-      document.getElementById("add-mtag").id = "add-mtag-hidden";
-    }
+    document.getElementById("add-mtag-hidden").id = "add-mtag";
+    document.getElementsByClassName("edit-box-mark")[0].className =
+      "edit-box-mark-hidden";
   };
 
   const remove_dtag = (e) => {
@@ -45,6 +43,8 @@ const Profile = () => {
       setd_interests([...d_interests, new_tag]);
     }
     document.getElementById("add-dtag").id = "add-dtag-hidden";
+    document.getElementsByClassName("edit-box-disc-hidden")[0].className =
+      "edit-box-disc";
   };
 
   const add_mtag = (e) => {
@@ -54,6 +54,8 @@ const Profile = () => {
       setm_interests([...m_interests, new_tag]);
     }
     document.getElementById("add-mtag").id = "add-mtag-hidden";
+    document.getElementsByClassName("edit-box-mark-hidden")[0].className =
+      "edit-box-mark";
   };
 
   const toggle_status_will = () => {
@@ -123,7 +125,7 @@ const Profile = () => {
               );
             })}
 
-            <div className="edit-box">
+            <div className="edit-box-disc">
               <a
                 className="description"
                 onClick={toggle_edit_disc}
@@ -131,7 +133,7 @@ const Profile = () => {
               >
                 <img
                   alt="edit"
-                  id="edit-icon-disc"
+                  id="edit-icon"
                   src="https://img.icons8.com/ios/50/000000/edit--v1.png"
                 />
               </a>
@@ -158,10 +160,10 @@ const Profile = () => {
               );
             })}
             <a onClick={toggle_edit_mark} href="#void">
-              <div className="edit-box">
+              <div className="edit-box-mark">
                 <img
                   alt="edit"
-                  id="edit-icon-mark"
+                  id="edit-icon"
                   src="https://img.icons8.com/ios/50/000000/edit--v1.png"
                 />
               </div>
