@@ -5,19 +5,28 @@ import { Modal } from "react-bootstrap";
 const Profile = () => {
   const [d_interests, setd_interests] = useState(user.d_interests);
   const [m_interests, setm_interests] = useState(user.m_interests);
+  const [warning, setWarning] = useState("");
   const [show, setShow] = useState(false);
 
   var will = true;
   var anon = false;
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const toggle_edit_disc = (e) => {
     document.getElementById("add-dtag-hidden").id = "add-dtag";
     document.getElementsByClassName("edit-box-disc")[0].className =
       "edit-box-disc-hidden";
   };
+  const handleShow = (warning) => {
+    setShow(true);
+    if (typeof warning === "string") {
+      setWarning(warning);
+    } else {
+      setWarning("This feature hasn't been implemented!");
+    }
+  };
+
   const toggle_edit_mark = () => {
     document.getElementById("add-mtag-hidden").id = "add-mtag";
     document.getElementsByClassName("edit-box-mark")[0].className =
@@ -41,6 +50,8 @@ const Profile = () => {
     if (d_interests.length < 3) {
       let new_tag = document.getElementById("add-dtag").value;
       setd_interests([...d_interests, new_tag]);
+    } else {
+      handleShow("More than 3 tags is not allowed");
     }
     document.getElementById("add-dtag").id = "add-dtag-hidden";
     document.getElementsByClassName("edit-box-disc-hidden")[0].className =
@@ -52,6 +63,8 @@ const Profile = () => {
     if (m_interests.length < 3) {
       let new_tag = document.getElementById("add-mtag").value;
       setm_interests([...m_interests, new_tag]);
+    } else {
+      handleShow("More than 3 tags is not allowed");
     }
     document.getElementById("add-mtag").id = "add-mtag-hidden";
     document.getElementsByClassName("edit-box-mark-hidden")[0].className =
@@ -84,7 +97,7 @@ const Profile = () => {
             <Modal.Title>Coming Soon:</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body>This feature hasn't been implemented!</Modal.Body>
+          <Modal.Body>{warning}</Modal.Body>
         </Modal>
         <div className="profile-edit">
           <img id="profile-pic" alt="profile" src={user.icon} />

@@ -18,7 +18,12 @@ export const AddPost = ({ posts, setAllPosts }) => {
   };
 
   const updateCategory = (e) => {
-    setCurrCategories(e.target.value);
+    const category = e.target.value;
+    if (category !== Category.MainCategories.InterestGroups) {
+      setCurrCategories([category]);
+    } else {
+      setCurrCategories([Category.MainCategories.InterestGroups]);
+    }
   };
 
   const updateTitle = (e) => {
@@ -63,7 +68,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
                 <legend className="col-form-label col-sm-3 add-post-options">
                   Type
                 </legend>
-                <div className="col-sm-8">
+                <div className="col-sm-8 type-inline">
                   <div className="custom-radio custom-control-inline">
                     <input
                       onClick={updateType}
@@ -73,26 +78,19 @@ export const AddPost = ({ posts, setAllPosts }) => {
                       name="customRadioInline1"
                       className="custom-control-input"
                     ></input>
-                    <label
-                      htmlFor="customRadioInline1"
-                    >
-                      Discussion
-                    </label>
-                  <div className="custom-radio custom-control-inline">
-                    <input
-                      onClick={updateType}
-                      value={Type.Question}
-                      type="radio"
-                      id="customRadioInline2"
-                      name="customRadioInline1"
-                      className="custom-control-input"
-                    ></input>
+                    <label htmlFor="customRadioInline1">Discussion</label>
+                    <div className="custom-radio custom-control-inline">
+                      <input
+                        onClick={updateType}
+                        value={Type.Question}
+                        type="radio"
+                        id="customRadioInline2"
+                        name="customRadioInline1"
+                        className="custom-control-input"
+                      ></input>
 
-                    <label
-                      htmlFor="customRadioInline2"
-                    >
-                      Q&amp;A
-                    </label>
+                      <label htmlFor="customRadioInline2">Q&amp;A</label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -115,88 +113,71 @@ export const AddPost = ({ posts, setAllPosts }) => {
                       {currCategories}
                     </label>
                     <div className="dropdown padding" id="menu">
-                    <button className="dropbtn" id="other-btn-select">Select</button>
-                    <div className="dropdown-content" id="cat-drop">
-                      <div className="custom-radio custom-control-inline">
-                        <input
-                          onClick={updateCategory}
-                          value={Category.MainCategories.Academics}
-                          type="radio"
-                          id="cat-drop-down"
-                          name="cat-drop-down"
-                          className="custom-control-input"
-                        ></input>
-                        <label
-                          htmlFor="cat-drop-down"
-                        >
-                          Academics
-                        </label>
-                      </div>
-                      <div className="custom-radio custom-control-inline">
-                        <input
-                          onClick={updateCategory}
-                          value={Category.MainCategories.Housing}
-                          type="radio"
-                          id="cat-drop-down2"
-                          name="cat-drop-down"
-                          className="custom-control-input"
-                        ></input>
-                        <label
-                          htmlFor="cat-drop-down2"
-                        >
-                          Housing
-                        </label>
-                      </div>
-                      <div className="custom-radio custom-control-inline">
-                        <input
-                          onClick={updateCategory}
-                          value={Category.MainCategories.Dining}
-                          type="radio"
-                          id="cat-drop-down3"
-                          name="cat-drop-down"
-                          className="custom-control-input"
-                        ></input>
-                        <label
-                          htmlFor="cat-drop-down3"
-                        >
-                          Dining
-                        </label>
-                      </div>
-                      <div className="custom-radio custom-control-inline">
-                        <input
-                          onClick={updateCategory}
-                          value={Category.MainCategories.InterestGroups}
-                          type="radio"
-                          id="cat-drop-down4"
-                          name="cat-drop-down"
-                          className="custom-control-input"
-                        ></input>
-                        <label
-                          htmlFor="cat-drop-down4"
-                        >
-                          Interest Groups
-                        </label>
-                      </div>
-                      <div className="custom-radio custom-control-inline">
-                        <input
-                          onClick={updateCategory}
-                          value={Category.MainCategories.Miscellaneous}
-                          type="radio"
-                          id="cat-drop-down5"
-                          name="cat-drop-down"
-                          className="custom-control-input"
-                        ></input>
-                        <label
-                          htmlFor="cat-drop-down5"
-                        >
-                          Miscellaneous
-                        </label>
+                      <button className="dropbtn" id="other-btn-select">
+                        Select
+                      </button>
+                      <div className="dropdown-content" id="cat-drop">
+                        <div className="custom-radio custom-control-inline">
+                          <input
+                            onClick={updateCategory}
+                            value={Category.MainCategories.Academics}
+                            type="radio"
+                            id="cat-drop-down"
+                            name="cat-drop-down"
+                            className="custom-control-input"
+                          ></input>
+                          <label htmlFor="cat-drop-down">Academics</label>
+                        </div>
+                        <div className="custom-radio custom-control-inline">
+                          <input
+                            onClick={updateCategory}
+                            value={Category.MainCategories.Housing}
+                            type="radio"
+                            id="cat-drop-down2"
+                            name="cat-drop-down"
+                            className="custom-control-input"
+                          ></input>
+                          <label htmlFor="cat-drop-down2">Housing</label>
+                        </div>
+                        <div className="custom-radio custom-control-inline">
+                          <input
+                            onClick={updateCategory}
+                            value={Category.MainCategories.Dining}
+                            type="radio"
+                            id="cat-drop-down3"
+                            name="cat-drop-down"
+                            className="custom-control-input"
+                          ></input>
+                          <label htmlFor="cat-drop-down3">Dining</label>
+                        </div>
+                        <div className="custom-radio custom-control-inline">
+                          <input
+                            onClick={updateCategory}
+                            value={Category.MainCategories.InterestGroups}
+                            type="radio"
+                            id="cat-drop-down4"
+                            name="cat-drop-down"
+                            className="custom-control-input"
+                          ></input>
+                          <label htmlFor="cat-drop-down4">
+                            Interest Groups
+                          </label>
+                        </div>
+                        <div className="custom-radio custom-control-inline">
+                          <input
+                            onClick={updateCategory}
+                            value={Category.MainCategories.Miscellaneous}
+                            type="radio"
+                            id="cat-drop-down5"
+                            name="cat-drop-down"
+                            className="custom-control-input"
+                          ></input>
+                          <label htmlFor="cat-drop-down5">Miscellaneous</label>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  </div>
                 </div>
-                
               </div>
             </div>
             <div className="form-group row">
@@ -274,8 +255,9 @@ export const AddPost = ({ posts, setAllPosts }) => {
                 </button>
               </div>
             </div>
-            </div>
-          </form>
+            <div className="add-post-buffer"></div>
+          </div>
+        </form>
       </div>
     </div>
   );

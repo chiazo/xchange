@@ -377,7 +377,7 @@ h4 {
 }
 
 .category.col-4 {
-  padding-right: 0;
+  padding: 0;
   width: 70px;
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -624,7 +624,8 @@ p {
 }
 
 .cat {
-  font-size: 15px;
+  /* font-size: 15px; */
+  text-align: center;
 }
 
 .dropdown {
@@ -720,8 +721,6 @@ p {
 .edit-box-mark-hidden {
   display: none;
 }
-
-
 
 .profile-edit {
   position: relative;
@@ -910,9 +909,6 @@ input:hover {
 .radio-type input[type="radio"]:focus + label {
   border: 2px dashed #444;
 }
-.add-post input {
-  display: none;
-}
 
 #add-dtag-hidden {
   display: none;
@@ -940,10 +936,26 @@ input:hover {
   background-color: white;
   border: 2px solid #444;
   border-radius: 5px;
-  padding-right: 3px;
-  padding-left: 3px;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding: 1px 3px;
+}
+
+div.custom-radio.custom-control-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+}
+
+.add-post-buffer {
+  min-height: 100px;
+}
+
+.custom-radio.custom-control-inline label {
+  margin: 0 1rem;
+}
+
+#post-title {
+  margin-top: 10px;
 }
 
 .radio-type input[type="checkbox"]:checked + label {
@@ -970,15 +982,19 @@ input:hover {
   padding-right: 15px;
 }
 
+.type-inline > label {
+  border: 2px solid red;
+}
+
 #other-btn-select {
   background-color: white;
-  border:none;
+  border: none;
   border-radius: 5px;
 }
 
 #menu {
-  padding-left:20px;
-  padding-bottom:9px;
+  padding-left: 20px;
+  padding-bottom: 9px;
 }
 
 .category-option {
@@ -989,15 +1005,16 @@ input:hover {
   max-width: 60px;
 }
 
-.category-option:hover{
+.category-option:hover {
   background-color: rgba(209, 230, 255, 0.6);
 }
 
-.category-option:focus{
+.category-option:focus {
   background-color: rgba(209, 230, 255, 0.6);
 }
 
-#cat-drop-down, #cat-drop-down2 {
+#cat-drop-down,
+#cat-drop-down2 {
   display: none;
   position: absolute;
   background-color: transparent;
@@ -1008,7 +1025,7 @@ input:hover {
   margin-left: -30px;
 }
 
-.wrap-check{
+.wrap-check {
   white-space: nowrap;
 }
 
@@ -1016,7 +1033,7 @@ input:hover {
   background-color: rgba(185, 218, 255, 0.6);
 }
 
-.radio-type .back-color{
+.radio-type .back-color {
   background-color: rgba(185, 218, 255, 0.6);
   min-width: 80px;
 }
