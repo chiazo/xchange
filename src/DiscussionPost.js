@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Modal } from "react-bootstrap";
 import { useParams, useLocation } from "react-router-dom";
 
 import Comment from "./components/comment";
@@ -10,11 +10,14 @@ const DiscussionPost = ({ posts }) => {
   const [comments, setComments] = useState(posts[id].comments);
   const [writingComment, setWritingComment] = useState(false);
   const [currComment, setCurrComment] = useState("");
+  const [show, setShow] = useState(false);
   const {
     state: { post },
   } = useLocation();
   const { title, submission, category, author, date, icon } = post;
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const addComment = () => {
     setWritingComment(true);
   };
@@ -86,6 +89,13 @@ const DiscussionPost = ({ posts }) => {
 
   return (
     <div className="discussion-post">
+      <Modal show={show} onHide={handleClose} className="coming-soon">
+        <Modal.Header closeButton>
+          <Modal.Title>Coming Soon:</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>This feature hasn't been implemented!</Modal.Body>
+      </Modal>
       <button className="add-comment-button" onClick={addComment}>
         +
       </button>
@@ -122,7 +132,9 @@ const DiscussionPost = ({ posts }) => {
           </div>
 
           <div className="col-3">
-            <button className="discussion-button">Sort</button>
+            <button className="discussion-button" onClick={handleShow}>
+              Sort
+            </button>
           </div>
         </div>
       </Card>

@@ -1,40 +1,65 @@
-import React, { useState, useEffect } from "react";
-import { propTypes } from "react-bootstrap/esm/Image";
+import React, { useState } from "react";
 import { user } from "./data/user.js";
+import { Modal } from "react-bootstrap";
 
 const Profile = () => {
-  var edit_mode = false;
   const [d_interests, setd_interests] = useState(user.d_interests);
   const [m_interests, setm_interests] = useState(user.m_interests);
+  const [show, setShow] = useState(false);
+
   var will = true;
   var anon = false;
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const toggle_edit_disc = (e) => {
+    document.getElementById("add-dtag-hidden").id = "add-dtag";
+    document.getElementsByClassName("edit-box-disc")[0].className =
+      "edit-box-disc-hidden";
+  };
+  const toggle_edit_mark = () => {
+    document.getElementById("add-mtag-hidden").id = "add-mtag";
+    document.getElementsByClassName("edit-box-mark")[0].className =
+      "edit-box-mark-hidden";
+  };
+
   const remove_dtag = (e) => {
     e.preventDefault();
-    var name = e.target.innerText.substring(2);
-    setd_interests(d_interests.filter((item) => item != name));
+    let name = e.target.innerText.substring(2);
+    setd_interests(d_interests.filter((item) => item !== name));
   };
 
   const remove_mtag = (e) => {
     e.preventDefault();
-    var name = e.target.innerText.substring(2);
-    setm_interests(m_interests.filter((item) => item != name));
+    let name = e.target.innerText.substring(2);
+    setm_interests(m_interests.filter((item) => item !== name));
   };
 
   const add_dtag = (e) => {
-    //e.preventDefault();
-    var new_tag = document.getElementById("add-dtag").value;
-    setd_interests([...d_interests, new_tag]);
+    e.preventDefault();
+    if (d_interests.length < 3) {
+      let new_tag = document.getElementById("add-dtag").value;
+      setd_interests([...d_interests, new_tag]);
+    }
+    document.getElementById("add-dtag").id = "add-dtag-hidden";
+    document.getElementsByClassName("edit-box-disc-hidden")[0].className =
+      "edit-box-disc";
   };
 
   const add_mtag = (e) => {
-    //e.preventDefault();
-    var new_tag = document.getElementById("add-mtag").value;
-    setm_interests([...m_interests, new_tag]);
+    e.preventDefault();
+    if (m_interests.length < 3) {
+      let new_tag = document.getElementById("add-mtag").value;
+      setm_interests([...m_interests, new_tag]);
+    }
+    document.getElementById("add-mtag").id = "add-mtag-hidden";
+    document.getElementsByClassName("edit-box-mark-hidden")[0].className =
+      "edit-box-mark";
   };
 
   const toggle_status_will = () => {
-    if (will != true) {
+    if (will !== true) {
       document.getElementById("status-will").id = "status-will-a";
       document.getElementById("status-anon-a").id = "status-anon";
       will = true;
@@ -43,7 +68,7 @@ const Profile = () => {
   };
 
   const toggle_status_anon = () => {
-    if (anon != true) {
+    if (anon !== true) {
       document.getElementById("status-anon").id = "status-anon-a";
       document.getElementById("status-will-a").id = "status-will";
       anon = true;
@@ -54,16 +79,18 @@ const Profile = () => {
   return (
     <div className="home">
       <div id="content">
+        <Modal show={show} onHide={handleClose} className="coming-soon">
+          <Modal.Header closeButton>
+            <Modal.Title>Coming Soon:</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>This feature hasn't been implemented!</Modal.Body>
+        </Modal>
         <div className="profile-edit">
-          <img
-            id="profile-pic"
-            alt="profile"
-            src={
-              "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
-            }
-          />
+          <img id="profile-pic" alt="profile" src={user.icon} />
           <div id="profile-edit" className="edit-box">
             <img
+              onClick={handleShow}
               alt="edit"
               id="edit-icon"
               src="https://img.icons8.com/ios/50/000000/edit--v1.png"
@@ -80,6 +107,7 @@ const Profile = () => {
           </div>
           <div className="edit-box">
             <img
+              onClick={handleShow}
               alt="edit"
               id="edit-icon"
               src="https://img.icons8.com/ios/50/000000/edit--v1.png"
@@ -91,14 +119,18 @@ const Profile = () => {
           <div className="interest">
             {d_interests.map((value, idx) => {
               return (
-                <a onClick={remove_dtag} key={idx} href="#">
+                <a onClick={remove_dtag} key={idx} href="#void">
                   <p>x {value}</p>
                 </a>
               );
             })}
 
-            <div className="edit-box">
-              <a className="description" onClick={add_dtag} href="#">
+            <div className="edit-box-disc">
+              <a
+                className="description"
+                onClick={toggle_edit_disc}
+                href="#void"
+              >
                 <img
                   alt="edit"
                   id="edit-icon"
@@ -109,7 +141,7 @@ const Profile = () => {
             <form onSubmit={add_dtag}>
               <input
                 type="text"
-                id="add-dtag"
+                id="add-dtag-hidden"
                 className="add-interest"
                 placeholder="seniors"
               ></input>
@@ -122,23 +154,24 @@ const Profile = () => {
           <div className="interest">
             {m_interests.map((value, idx) => {
               return (
-                <a key={idx} onClick={remove_mtag} href="#">
+                <a key={idx} onClick={remove_mtag} href="#void">
                   <p>x {value}</p>
                 </a>
               );
             })}
-
-            <div className="edit-box">
-              <img
-                alt="edit"
-                id="edit-icon"
-                src="https://img.icons8.com/ios/50/000000/edit--v1.png"
-              />
-            </div>
+            <a onClick={toggle_edit_mark} href="#void">
+              <div className="edit-box-mark">
+                <img
+                  alt="edit"
+                  id="edit-icon"
+                  src="https://img.icons8.com/ios/50/000000/edit--v1.png"
+                />
+              </div>
+            </a>
             <form onSubmit={add_mtag}>
               <input
                 type="text"
-                id="add-mtag"
+                id="add-mtag-hidden"
                 className="add-interest"
                 placeholder="shoes"
               ></input>
@@ -149,10 +182,10 @@ const Profile = () => {
           <h1>Privacy Settings</h1>
           <div className="interest">
             <p id="field">Status</p>
-            <a href="#" onClick={toggle_status_will}>
+            <a href="#void" onClick={toggle_status_will}>
               <p id="status-will-a">By William</p>
             </a>
-            <a href="#" onClick={toggle_status_anon}>
+            <a href="#void" onClick={toggle_status_anon}>
               <p id="status-anon">By Anon</p>
             </a>
           </div>
@@ -162,6 +195,7 @@ const Profile = () => {
           </div>
           <div className="edit-box">
             <img
+              onClick={handleShow}
               alt="edit"
               id="edit-icon"
               src="https://img.icons8.com/ios/50/000000/edit--v1.png"

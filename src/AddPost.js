@@ -56,11 +56,13 @@ export const AddPost = ({ posts, setAllPosts }) => {
   return (
     <div className="add-post">
       <div id="content">
-          <form>
+        <form>
           <div className="form-container">
             <fieldset className="">
               <div className="form-group row radio-type">
-                <legend className="col-form-label col-sm-3 add-post-options">Type</legend>
+                <legend className="col-form-label col-sm-3 add-post-options">
+                  Type
+                </legend>
                 <div className="col-sm-8">
                   <div className="custom-radio custom-control-inline">
                     <input
@@ -76,7 +78,6 @@ export const AddPost = ({ posts, setAllPosts }) => {
                     >
                       Discussion
                     </label>
-                  </div>
                   <div className="custom-radio custom-control-inline">
                     <input
                       onClick={updateType}
@@ -86,6 +87,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
                       name="customRadioInline1"
                       className="custom-control-input"
                     ></input>
+
                     <label
                       htmlFor="customRadioInline2"
                     >
@@ -96,7 +98,9 @@ export const AddPost = ({ posts, setAllPosts }) => {
               </div>
             </fieldset>
             <div className="form-group row radio-type">
-              <legend className="col-form-label col-sm-3 pt-0 add-post-options cat">Category</legend>
+              <legend className="col-form-label col-sm-3 pt-0 add-post-options cat">
+                Category
+              </legend>
               <div className="col-sm-8">
                 <div className="col-sm-8">
                   <div className="form-check form-check-inline">
@@ -196,7 +200,10 @@ export const AddPost = ({ posts, setAllPosts }) => {
               </div>
             </div>
             <div className="form-group row">
-              <label htmlFor="post-title" className="col-sm-3 col-form-label dropdown add-post-options">
+              <label
+                htmlFor="post-title"
+                className="col-sm-3 col-form-label dropdown add-post-options"
+              >
                 Title
               </label>
               <div className="col-sm-8">
@@ -212,7 +219,8 @@ export const AddPost = ({ posts, setAllPosts }) => {
             <div className="form-group row">
               <label
                 htmlFor="exampleFormControlTextarea1"
-                className="col-sm-3 col-form-label dropdown add-post-options">
+                className="col-sm-3 col-form-label dropdown add-post-options"
+              >
                 Text
               </label>
               <div className="col-sm-8">
@@ -226,7 +234,9 @@ export const AddPost = ({ posts, setAllPosts }) => {
               </div>
             </div>
             <div className="form-group row radio-type">
-              <legend className="col-form-label col-sm-3 pt-0 dropdown add-post-options">Status</legend>
+              <legend className="col-form-label col-sm-3 pt-0 dropdown add-post-options">
+                Status
+              </legend>
               <div className="col-sm-9">
                 <div className="custom-radio custom-control-inline">
                   <input
@@ -237,10 +247,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
                     className="custom-control-input"
                     value={Status.Public}
                   ></input>
-                  <label
-                    className=""
-                    htmlFor="customRadioInline3"
-                  >
+                  <label className="" htmlFor="customRadioInline3">
                     by {user.name.split(" ")[0]}
                   </label>
                 </div>
@@ -253,10 +260,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
                     className="custom-control-input"
                     value={Status.Anon}
                   ></input>
-                  <label
-                    className=""
-                    htmlFor="customRadioInline4"
-                  >
+                  <label className="" htmlFor="customRadioInline4">
                     by Anon
                   </label>
                 </div>
@@ -274,8 +278,6 @@ export const AddPost = ({ posts, setAllPosts }) => {
           </form>
       </div>
     </div>
-
-    
   );
 };
 

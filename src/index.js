@@ -24,7 +24,11 @@ const Index = () => {
     },
     {
       page: "Profile Page",
-      requirements: ["Add or remove interests", "Ability to edit status"],
+      requirements: [
+        "Add or remove interests",
+        "Ability to edit status",
+        "Allow only three interests at once",
+      ],
     },
     {
       page: "Discussions Page",

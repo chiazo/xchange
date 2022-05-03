@@ -37,7 +37,6 @@ html {
   box-sizing: border-box;
   background-color: var(--bg-color);
   font-size: 18px;
-  border: 1px solid black;
 }
 
 .masthead {
@@ -66,7 +65,6 @@ html {
   border-radius: 5px;
   text-align: left;
 }
-
 
 .discussion-post-title.card-title.h5 {
   font-size: 15px;
@@ -150,7 +148,7 @@ html {
   padding-right: 0;
 }
 
-.comment-body.card-body>div:first-child {
+.comment-body.card-body > div:first-child {
   margin-bottom: 5px;
 }
 
@@ -181,7 +179,7 @@ html {
 }
 
 .discussion-post-details .col-4:last-child {
-  min-width: 110px;
+  min-width: 120px;
   padding-left: 0;
 }
 
@@ -190,6 +188,7 @@ html {
   border-radius: 6px;
   height: 30px;
   padding: 7px 8px;
+  width: 100%;
 }
 
 .comment-details p {
@@ -214,7 +213,6 @@ html {
   padding-left: 6px;
   margin: 0;
   border-left: 2px solid rgba(0, 0, 0, 0.2);
-  ;
 }
 
 .comment-date.col-7 p {
@@ -224,7 +222,6 @@ html {
 .comment-body {
   padding: 0;
 }
-
 
 .comment.card {
   margin-top: 14px;
@@ -294,7 +291,7 @@ h4 {
 /* Post Preview */
 
 .preview.card .col-9,
-.preview-body.card-body>.row,
+.preview-body.card-body > .row,
 .preview-body.card-body .col-4 {
   background-color: rgb(238, 246, 254);
 }
@@ -319,7 +316,7 @@ h4 {
   background-color: rgb(238, 246, 254);
 }
 
-.preview.card>.row {
+.preview.card > .row {
   margin: 0;
 }
 
@@ -362,7 +359,7 @@ h4 {
 .add-post-button,
 .add-comment-button {
   right: 7%;
-  bottom: 15%;
+  bottom: 100px;
   position: fixed;
   z-index: 1;
   width: 70px;
@@ -376,7 +373,7 @@ h4 {
 }
 
 .preview-body.card-body {
-  padding: 10px 0px;
+  padding: 10px;
 }
 
 .category.col-4 {
@@ -501,7 +498,8 @@ h4 {
 }
 
 .discussion-button,
-.home-button {
+.home-button,
+.dropbtn {
   border-radius: 10px;
   min-width: 60px;
   border: none;
@@ -529,7 +527,7 @@ h4 {
   height: 53px;
 }
 
-.form-group>.form-control {
+.form-group > .form-control {
   border: 3px solid var(--title-color);
   box-shadow: 3px 4px grey;
 }
@@ -615,15 +613,6 @@ p {
   padding-bottom: 10px;
 }
 
-.dropbtn {
-  background-color: rgb(239, 239, 239);
-  color: black;
-  font-size: 16px;
-  border-radius: 10px;
-  min-width: 60px;
-  font-size: 18px;
-}
-
 .add-post-options {
   background-color: rgb(239, 239, 239);
   color: black;
@@ -631,14 +620,12 @@ p {
   border: black;
   border-radius: 8px;
   min-width: 60px;
-  max-height:40px;
+  max-height: 40px;
 }
 
 .cat {
   font-size: 15px;
 }
-
-
 
 .dropdown {
   position: relative;
@@ -682,7 +669,6 @@ p {
   height: 120px;
   border-radius: 100%;
   border: 2px solid black;
-
 }
 
 #edit-icon {
@@ -703,17 +689,39 @@ p {
   box-shadow: 3px 5px 5px #b3b2b2;
 }
 
-.edit-box2 {
+.edit-box-disc {
   background-color: white;
-  position: relative;
-  right: 0;
-  margin-right: 40px;
-  border: 1px solid black;
   border-radius: 100%;
+  border: 1px solid black;
   width: 30px;
   height: 30px;
-  margin-top: -5%;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  box-shadow: 3px 5px 5px #b3b2b2;
 }
+
+.edit-box-disc-hidden {
+  display: none;
+}
+
+.edit-box-mark {
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  box-shadow: 3px 5px 5px #b3b2b2;
+}
+
+.edit-box-mark-hidden {
+  display: none;
+}
+
+
 
 .profile-edit {
   position: relative;
@@ -729,7 +737,7 @@ p {
 }
 
 #profile-username {
-  color: #7D7D7D;
+  color: #7d7d7d;
 }
 
 .profile {
@@ -767,18 +775,18 @@ p {
   box-shadow: 3px 3px 5px #c2bfbf;
 }
 
-
 .interest p {
   margin-left: 15px;
   font-size: 11px;
   border: 1px solid black;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 6px;
+  padding-right: 6px;
   padding-top: 5px;
   padding-bottom: 3px;
   border-radius: 5px;
   box-shadow: 3px 3px 5px #c2bfbf;
   max-width: max-content;
+  white-space: nowrap;
 }
 
 #profile-space {
@@ -786,7 +794,7 @@ p {
 }
 
 #field {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   border: none;
   box-shadow: none;
 }
@@ -810,7 +818,7 @@ p {
 #profile-edit {
   bottom: 0;
 }
-.edit-box:hover + .add-interest { 
+.edit-box:hover + .add-interest {
   display: block;
 }
 
@@ -824,7 +832,6 @@ input:hover {
   margin-left: 25px;
   font-size: small;
   font-weight: 500;
-
 }
 
 #status-will-a {
@@ -843,7 +850,6 @@ input:hover {
   background-color: none;
 }
 
-
 #privacy-edit {
   position: absolute;
   left: 317px;
@@ -861,9 +867,19 @@ input:hover {
   box-shadow: 3px 4px 4px rgb(166 165 165);
 }
 
+.modal-title {
+  color: rgb(140, 176, 188);
+}
 
+@media only screen and (min-width: 495px) {
+  html {
+    border: 1px solid black;
+  }
 
-@media only screen and (min-width: 395px) {
+  .coming-soon {
+    max-width: 300px;
+    margin: 40px;
+  }
   .contract {
     display: block;
     border: 5px solid var(--header-color);
@@ -883,29 +899,41 @@ input:hover {
   .add-post-button,
   .add-comment-button {
     left: 300px;
-    top: 440px;
+    bottom: 15%;
   }
 }
-  
-.radio-type label:hover{
+
+.radio-type label:hover {
   background-color: rgba(209, 230, 255, 0.6);
 }
 
-.radio-type input[type="radio"]:focus +label {
-  border:2px dashed #444;
+.radio-type input[type="radio"]:focus + label {
+  border: 2px dashed #444;
 }
 .add-post input {
-  display:none;
+  display: none;
 }
 
+#add-dtag-hidden {
+  display: none;
+}
+#add-mtag-hidden {
+  display: none;
+}
+#add-dtag {
+  display: block;
+}
+#add-mtag {
+  display: block;
+}
 .radio-type input[type="radio"]:checked + label {
   background-color: rgba(185, 218, 255, 0.6);
   border: 2px solid #444;
   border-radius: 5px;
   padding-right: 3px;
-  padding-left:3px;
-  padding-top:1px;
-  padding-bottom:1px;
+  padding-left: 3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 .radio-type label {
@@ -913,9 +941,9 @@ input:hover {
   border: 2px solid #444;
   border-radius: 5px;
   padding-right: 3px;
-  padding-left:3px;
-  padding-top:1px;
-  padding-bottom:1px;
+  padding-left: 3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 .radio-type input[type="checkbox"]:checked + label {
@@ -924,8 +952,8 @@ input:hover {
   border-radius: 5px;
   padding-right: 3px;
   padding-left: 3px;
-  padding-top:1px;
-  padding-bottom:1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 #customRadioInline1 {
@@ -937,9 +965,9 @@ input:hover {
 }
 
 .form-container {
-  padding:10px;
-  padding-left:15px;
-  padding-right:15px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #other-btn-select {
