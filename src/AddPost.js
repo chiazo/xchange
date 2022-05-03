@@ -18,10 +18,7 @@ export const AddPost = ({ posts, setAllPosts }) => {
   };
 
   const updateCategory = (e) => {
-    const filteredCategories = currCategories.filter(
-      (x) => x !== e.target.value
-    );
-    setCurrCategories([...filteredCategories, e.target.value]);
+    setCurrCategories(e.target.value);
   };
 
   const updateTitle = (e) => {
@@ -76,8 +73,11 @@ export const AddPost = ({ posts, setAllPosts }) => {
                       name="customRadioInline1"
                       className="custom-control-input"
                     ></input>
-                    <label htmlFor="customRadioInline1">Discussion</label>
-                  </div>
+                    <label
+                      htmlFor="customRadioInline1"
+                    >
+                      Discussion
+                    </label>
                   <div className="custom-radio custom-control-inline">
                     <input
                       onClick={updateType}
@@ -87,7 +87,12 @@ export const AddPost = ({ posts, setAllPosts }) => {
                       name="customRadioInline1"
                       className="custom-control-input"
                     ></input>
-                    <label htmlFor="customRadioInline2">Q&amp;A</label>
+
+                    <label
+                      htmlFor="customRadioInline2"
+                    >
+                      Q&amp;A
+                    </label>
                   </div>
                 </div>
               </div>
@@ -97,44 +102,101 @@ export const AddPost = ({ posts, setAllPosts }) => {
                 Category
               </legend>
               <div className="col-sm-8">
-                <div className="form-check form-check-inline">
-                  <input
-                    onClick={updateCategory}
-                    value="Academics"
-                    className="form-check-input"
-                    type="checkbox"
-                    id="inlineCheckbox1"
-                  ></input>
-                  <label className="form-check-label" htmlFor="inlineCheckbox1">
-                    Academics
-                  </label>
-                </div>
-                <div className="dropdown">
-                  <button
-                    className="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Dropdown button
-                  </button>
-                  <div
-                    className="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a className="dropdown-item" href="#void">
-                      Action
-                    </a>
-                    <a className="dropdown-item" href="#void">
-                      Another action
-                    </a>
-                    <a className="dropdown-item" href="#void">
-                      Something else here
-                    </a>
+                <div className="col-sm-8">
+                  <div className="form-check form-check-inline">
+                    <input
+                      onClick={updateCategory}
+                      value="Academics"
+                      className="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                    ></input>
+                    <label className="back-color" htmlFor="inlineCheckbox1">
+                      {currCategories}
+                    </label>
+                    <div className="dropdown padding" id="menu">
+                    <button className="dropbtn" id="other-btn-select">Select</button>
+                    <div className="dropdown-content" id="cat-drop">
+                      <div className="custom-radio custom-control-inline">
+                        <input
+                          onClick={updateCategory}
+                          value={Category.MainCategories.Academics}
+                          type="radio"
+                          id="cat-drop-down"
+                          name="cat-drop-down"
+                          className="custom-control-input"
+                        ></input>
+                        <label
+                          htmlFor="cat-drop-down"
+                        >
+                          Academics
+                        </label>
+                      </div>
+                      <div className="custom-radio custom-control-inline">
+                        <input
+                          onClick={updateCategory}
+                          value={Category.MainCategories.Housing}
+                          type="radio"
+                          id="cat-drop-down2"
+                          name="cat-drop-down"
+                          className="custom-control-input"
+                        ></input>
+                        <label
+                          htmlFor="cat-drop-down2"
+                        >
+                          Housing
+                        </label>
+                      </div>
+                      <div className="custom-radio custom-control-inline">
+                        <input
+                          onClick={updateCategory}
+                          value={Category.MainCategories.Dining}
+                          type="radio"
+                          id="cat-drop-down3"
+                          name="cat-drop-down"
+                          className="custom-control-input"
+                        ></input>
+                        <label
+                          htmlFor="cat-drop-down3"
+                        >
+                          Dining
+                        </label>
+                      </div>
+                      <div className="custom-radio custom-control-inline">
+                        <input
+                          onClick={updateCategory}
+                          value={Category.MainCategories.InterestGroups}
+                          type="radio"
+                          id="cat-drop-down4"
+                          name="cat-drop-down"
+                          className="custom-control-input"
+                        ></input>
+                        <label
+                          htmlFor="cat-drop-down4"
+                        >
+                          Interest Groups
+                        </label>
+                      </div>
+                      <div className="custom-radio custom-control-inline">
+                        <input
+                          onClick={updateCategory}
+                          value={Category.MainCategories.Miscellaneous}
+                          type="radio"
+                          id="cat-drop-down5"
+                          name="cat-drop-down"
+                          className="custom-control-input"
+                        ></input>
+                        <label
+                          htmlFor="cat-drop-down5"
+                        >
+                          Miscellaneous
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                   </div>
                 </div>
+                
               </div>
             </div>
             <div className="form-group row">
@@ -212,8 +274,8 @@ export const AddPost = ({ posts, setAllPosts }) => {
                 </button>
               </div>
             </div>
-          </div>
-        </form>
+            </div>
+          </form>
       </div>
     </div>
   );
