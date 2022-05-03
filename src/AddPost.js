@@ -13,13 +13,6 @@ export const AddPost = ({ posts, setAllPosts }) => {
   const [currText, setCurrText] = useState("");
   const [currStatus, setCurrStatus] = useState("");
 
-  // const addCategory = (e) => {
-  //   //e.preventDefault();
-  //   console.log(e.target.value);
-  //   // var newCategory = document.getElementById("add-dtag").value;
-  //   // setCurrCategories([...currCategories, newCategory]);
-  // };
-
   const updateType = (e) => {
     setCurrType(e.target.value);
   };
