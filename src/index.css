@@ -671,18 +671,6 @@ p {
   border: 2px solid black;
 }
 
-#edit-icon-disc {
-  width: 15px;
-  height: 15px;
-  margin: auto;
-}
-
-#edit-icon-mark {
-  width: 15px;
-  height: 15px;
-  margin: auto;
-
-}
 #edit-icon {
   width: 15px;
   height: 15px;
@@ -701,17 +689,39 @@ p {
   box-shadow: 3px 5px 5px #b3b2b2;
 }
 
-.edit-box2 {
+.edit-box-disc {
   background-color: white;
-  position: relative;
-  right: 0;
-  margin-right: 40px;
-  border: 1px solid black;
   border-radius: 100%;
+  border: 1px solid black;
   width: 30px;
   height: 30px;
-  margin-top: -5%;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  box-shadow: 3px 5px 5px #b3b2b2;
 }
+
+.edit-box-disc-hidden {
+  display: none;
+}
+
+.edit-box-mark {
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  box-shadow: 3px 5px 5px #b3b2b2;
+}
+
+.edit-box-mark-hidden {
+  display: none;
+}
+
+
 
 .profile-edit {
   position: relative;
